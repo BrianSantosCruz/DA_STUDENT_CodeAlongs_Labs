@@ -35,6 +35,9 @@ SUBMIT
     into the LMS.
     Submit once, at the end of Day 2. Keep every day's work in here.
 """
+with open("data/volunteer_shifts.txt") as f:
+    shifts = [line for line in f.read().splitlines()
+              if line and not line.startswith("#")]
 
 ############################################################################
 #  THE DATA: open data/volunteer_shifts.txt and look at it
@@ -44,17 +47,17 @@ SUBMIT
 
 # 1. What does one row represent?
 # Your answer:
-#
+# One row represents each volunteer's name, day and hours that they work.
 #
 
 # 2. Which fields hold numbers, and which hold text?
 # Your answer:
-#
+# Name and day hold text and hours holds numbers.
 #
 
 # 3. What already looks wrong, missing or inconsistent?
 # Your answer:
-#
+# There is a consistency between the amount of workers (2 workers) for each weekday, except for Friday (4 workers).
 #
 
 ############################################################################
