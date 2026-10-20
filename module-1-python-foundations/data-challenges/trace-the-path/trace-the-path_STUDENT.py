@@ -46,21 +46,20 @@ SUBMIT
 # 1. What does one row represent?
 # Your answer:
 # One row represents each volunteer's name, day and hours that they work.
-#
 
 # 2. Which fields hold numbers, and which hold text?
 # Your answer:
 # Name and day hold text and hours holds numbers.
-#
 
 # 3. What already looks wrong, missing or inconsistent?
 # Your answer:
 # There is a consistency between the amount of workers (2 workers) for each weekday, except for Friday (4 workers).
-#
 
 ############################################################################
 #  DAY 1
 ############################################################################
+
+# There are 5 rows with a data value of 4 or more in the 3rd column.
 
 # ===== Step 1: Count the Shifts of 4+ Hours, Prediction First =====
 # The coordinator counts any shift of 4 hours or more as a long shift.
@@ -84,6 +83,8 @@ SUBMIT
 #
 # If the two differ, say which line you mis-read. Do not edit the
 # prediction.
+#
+# Both my prediction and the printed count were the same.
 
 with open("volunteer_shifts.txt") as f:
     shifts = [line for line in f.read().splitlines()
@@ -92,14 +93,9 @@ with open("volunteer_shifts.txt") as f:
 long_shifts = 0
 for shift in shifts:
     hours = int(shift.split(",")[2])
-    # TODO: write the test for a long shift. The coordinator counts a
-    #       shift of 4 hours or more.
-    print()
-    if None:
-        # TODO: this is the counting line. Move long_shifts on by one.
-        long_shifts = None
-
-print("shifts of 4+ hours:", long_shifts)
+    if hours >= 4:
+        long_shifts += 1
+        print("shifts of 4+ hours:", long_shifts)
 
 # Your answer:
 # The .split() splits up strings by any whitespace (for example, spaces between text). The comma makes sure that the string is split by the commas inside of it.
@@ -133,7 +129,7 @@ for shift in shifts:
     #       total so far. This printed line IS the tracing tool.
     print(day, volunteer, "| running total:", None)
 
-print("total hours logged this week:", total)
+#print("total hours logged this week:", total)
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -177,24 +173,24 @@ print("total hours logged this week:", total)
 # If your prediction was a number of records rather than a number of pairs,
 # that gap is the thing to bring to the shareout.
 
-volunteers = []
-days = []
-for shift in shifts:
-    volunteer, day, hours = shift.split(",")
-    # TODO: only append a volunteer this list does not already have.
-    if None:
-        volunteers.append(volunteer)
-    # TODO: the same test again, for the day.
-    if None:
-        days.append(day)
+#volunteers = []
+#days = []
+#for shift in shifts:
+#    volunteer, day, hours = shift.split(",")
+#    # TODO: only append a volunteer this list does not already have.
+#    if None:
+#        volunteers.append(volunteer)
+#    # TODO: the same test again, for the day.
+#    if None:
+#        days.append(day)
 
-checks = 0
-for volunteer in volunteers:
+#checks = 0
+#for volunteer in volunteers:
     # TODO: the inner loop. One pass per weekday, for each volunteer.
-    for day in None:
-        checks = checks + 1
+#    for day in None:
+#        checks = checks + 1
 
-print(len(volunteers), "volunteers x", len(days), "days =", checks)
+#print(len(volunteers), "volunteers x", len(days), "days =", checks)
 
 # ===== Step 4: Fix the Off-by-One and Print the Row It Never Reached =====
 # An earlier version of this report was quietly missing a volunteer's last
@@ -215,22 +211,22 @@ print(len(volunteers), "volunteers x", len(days), "days =", checks)
 # Both loops run clean, with no traceback from either. Only one of them is
 # right.
 
-buggy_seen = 0
-for i in range(len(shifts) - 1):
-    buggy_seen = buggy_seen + 1
+#buggy_seen = 0
+#for i in range(len(shifts) - 1):
+#    buggy_seen = buggy_seen + 1
 
-fixed_seen = 0
+#fixed_seen = 0
 # TODO: write the loop header that visits EVERY row, not all but one.
 #       The body below is already correct. Only the range changes.
-for i in None:
-    fixed_seen = fixed_seen + 1
+#for i in None:
+#    fixed_seen = fixed_seen + 1
 
-print("rows in the file:   ", len(shifts))
-print("buggy loop visited: ", buggy_seen)
-print("fixed loop visited: ", fixed_seen)
+#print("rows in the file:   ", len(shifts))
+#print("buggy loop visited: ", buggy_seen)
+#print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
-print("the row it never saw:", None)
+#print("the row it never saw:", None)
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
