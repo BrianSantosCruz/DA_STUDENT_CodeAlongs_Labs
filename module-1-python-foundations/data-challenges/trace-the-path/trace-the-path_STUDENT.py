@@ -35,9 +35,7 @@ SUBMIT
     into the LMS.
     Submit once, at the end of Day 2. Keep every day's work in here.
 """
-with open("data/volunteer_shifts.txt") as f:
-    shifts = [line for line in f.read().splitlines()
-              if line and not line.startswith("#")]
+
 
 ############################################################################
 #  THE DATA: open data/volunteer_shifts.txt and look at it
@@ -87,7 +85,7 @@ with open("data/volunteer_shifts.txt") as f:
 # If the two differ, say which line you mis-read. Do not edit the
 # prediction.
 
-with open("data/volunteer_shifts.txt") as f:
+with open("volunteer_shifts.txt") as f:
     shifts = [line for line in f.read().splitlines()
               if line and not line.startswith("#")]
 
@@ -96,6 +94,7 @@ for shift in shifts:
     hours = int(shift.split(",")[2])
     # TODO: write the test for a long shift. The coordinator counts a
     #       shift of 4 hours or more.
+    print()
     if None:
         # TODO: this is the counting line. Move long_shifts on by one.
         long_shifts = None
@@ -103,8 +102,8 @@ for shift in shifts:
 print("shifts of 4+ hours:", long_shifts)
 
 # Your answer:
-#
-#
+# The .split() splits up strings by any whitespace (for example, spaces between text). The comma makes sure that the string is split by the commas inside of it.
+# I found this information on https://mimo.org/glossary/python/string-split-method.
 
 # ===== Step 2: Total the Week's Hours, Printing the Running Total Each Pass =====
 # You already wrote a loop that counts. This one adds up instead, and you
