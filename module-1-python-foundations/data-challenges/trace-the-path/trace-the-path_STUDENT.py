@@ -242,5 +242,5 @@ print("the row it never saw:", shifts[-1])
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
-#
+# I read the range to find the off-by-one. I would trust this if a file was too long to eyeball because when a file is too long, noticing the count being too short seems more challenging because of the increased length.
+# I would have done further research on .split(",") to better understand it while I worked on this lab.
