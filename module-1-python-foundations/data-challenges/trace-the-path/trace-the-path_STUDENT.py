@@ -147,8 +147,9 @@ print("total hours logged this week:", total)
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
-#
+# My prediction would be that there would be a total of 37 hours and 12 rows counted. Both predictions were correct, as seen in the code which prints out the 37 total hours and is 12 rows of data.
+# The data is structured, but has some inconsistency - there are more people working on Fridays than the other days of the week, which are all exactly 2 people working, as opposed to the 4 of Friday.
+# I made sure to hold the loop in my head because doing so would allow me to keep track of the pace that I am at with the code.
 
 ############################################################################
 #  DAY 2
