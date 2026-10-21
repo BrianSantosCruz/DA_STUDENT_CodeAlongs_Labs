@@ -163,6 +163,9 @@ print("total hours logged this week:", total)
 #    distinct volunteer names in the file, count the distinct weekdays, and
 #    multiply the two. Write it in a comment as <volunteers> x <days> =
 #    <cells> before you write or run anything.
+
+# <4 volunteers> x <5 days> = <20 cells>
+
 # 2. Collect the distinct volunteers in the first if TODO: one entry per
 #    volunteer, no repeats.
 # 3. Collect the distinct weekdays in the second if TODO, the same way.
@@ -173,24 +176,21 @@ print("total hours logged this week:", total)
 # If your prediction was a number of records rather than a number of pairs,
 # that gap is the thing to bring to the shareout.
 
-#volunteers = []
-#days = []
-#for shift in shifts:
-#    volunteer, day, hours = shift.split(",")
-#    # TODO: only append a volunteer this list does not already have.
-#    if None:
-#        volunteers.append(volunteer)
-#    # TODO: the same test again, for the day.
-#    if None:
-#        days.append(day)
+volunteers = []
+days = []
+for shift in shifts:
+    volunteer, day, hours = shift.split(",")
+    if volunteer is not volunteers:
+        volunteers.append(volunteer)
+    if day is not days:
+        days.append(day)
 
-#checks = 0
-#for volunteer in volunteers:
-    # TODO: the inner loop. One pass per weekday, for each volunteer.
-#    for day in None:
-#        checks = checks + 1
+checks = 0
+for volunteer in volunteers:
+    for day in days:
+        checks = checks + 1
 
-#print(len(volunteers), "volunteers x", len(days), "days =", checks)
+print(len(volunteers), "volunteers x", len(days), "days =", checks)
 
 # ===== Step 4: Fix the Off-by-One and Print the Row It Never Reached =====
 # An earlier version of this report was quietly missing a volunteer's last
@@ -211,22 +211,22 @@ print("total hours logged this week:", total)
 # Both loops run clean, with no traceback from either. Only one of them is
 # right.
 
-#buggy_seen = 0
-#for i in range(len(shifts) - 1):
-#    buggy_seen = buggy_seen + 1
+buggy_seen = 0
+for i in range(len(shifts) - 1):
+    buggy_seen = buggy_seen + 1
 
-#fixed_seen = 0
+fixed_seen = 0
 # TODO: write the loop header that visits EVERY row, not all but one.
 #       The body below is already correct. Only the range changes.
-#for i in None:
-#    fixed_seen = fixed_seen + 1
+for i in None:
+    fixed_seen = fixed_seen + 1
 
-#print("rows in the file:   ", len(shifts))
-#print("buggy loop visited: ", buggy_seen)
-#print("fixed loop visited: ", fixed_seen)
+print("rows in the file:   ", len(shifts))
+print("buggy loop visited: ", buggy_seen)
+print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
-#print("the row it never saw:", None)
+print("the row it never saw:", None)
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
