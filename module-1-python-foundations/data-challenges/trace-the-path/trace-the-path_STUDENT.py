@@ -109,6 +109,9 @@ for shift in shifts:
 #    The week's total hours: add the third field down all 12 rows. The
 #    number of lines that will print: the loop prints once per row it
 #    visits, so count the rows.
+
+# There is a total of 37 hours and 12 rows counted.
+
 # 2. Add this shift's hours onto the running total in the first TODO.
 #    Everything that came out of shift.split(",") is a string, so something
 #    has to convert it.
@@ -122,14 +125,10 @@ for shift in shifts:
 total = 0
 for shift in shifts:
     volunteer, day, hours = shift.split(",")
-    # TODO: add this shift's hours onto the running total. Mind the
-    #       type: everything that came out of that split is a string.
-    total = None
-    # TODO: print one line per pass: the day, the volunteer, and the
-    #       total so far. This printed line IS the tracing tool.
-    print(day, volunteer, "| running total:", None)
+    total += int(hours)
+    print(day, volunteer, "| running total:", total)
 
-#print("total hours logged this week:", total)
+print("total hours logged this week:", total)
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
