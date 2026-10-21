@@ -29,6 +29,12 @@ print('----- 1. Define and Call, Live -----')
 # TODO: define a function named greet that prints a welcome
 # message, then call it twice
 
+def greet(user_name):
+    print("Welcome", user_name)
+    
+
+greet("Heather")
+greet("Michael")
 
 # ===== 2. Parameters, Live =====
 # Make greet work for anyone: pass in a name and print a personal welcome for
@@ -64,3 +70,9 @@ print('----- 3. Return, Live -----')
 # Your answer:
 #
 #
+def double(n):
+    return n * 2
+
+result = double(7)
+print(result + 1)
+print(double(7) + 1)
