@@ -180,16 +180,14 @@ volunteers = []
 days = []
 for shift in shifts:
     volunteer, day, hours = shift.split(",")
-    if volunteer is not volunteers:
+    if volunteer  not in volunteers:
         volunteers.append(volunteer)
-    if day is not days:
+    if day not in days:
         days.append(day)
-
 checks = 0
 for volunteer in volunteers:
     for day in days:
         checks = checks + 1
-
 print(len(volunteers), "volunteers x", len(days), "days =", checks)
 
 # ===== Step 4: Fix the Off-by-One and Print the Row It Never Reached =====
