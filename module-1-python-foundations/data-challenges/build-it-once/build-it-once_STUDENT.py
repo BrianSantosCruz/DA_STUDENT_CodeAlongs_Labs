@@ -82,20 +82,20 @@ SUBMIT
 # The arithmetic is the same arithmetic a plain loop would do. What changes
 # is that the answer comes back to you instead of going to the screen.
 
-with open("build-it-once/rec_center_signups.txt") as f:
+with open(r"C:\Users\bs849\Desktop\DA_STUDENT_CodeAlongs_Labs\module-1-python-foundations\data-challenges\build-it-once\rec_center_signups.txt", "r") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 
 def total_sessions(records):
     count = 0
     for x in records:
-        x.split(",")
+        member, class_name, sessions = x.split(",")
         count += int(sessions)
     return count
 
 swim_only = []
 for x in signups:
-    record.split(",")
+    member, class_name, sessions = x.split(",")
     if class_name == "Swim":
         swim_only.append(x)
 
@@ -122,20 +122,20 @@ print("swim only:  ", total_sessions(swim_only))
 # One of the two functions you just wrote gives you something back. The
 # other only puts something on the screen.
 
-def count_long_bookings(records, minimum):
+#def count_long_bookings(records, minimum):
     # TODO: count the records whose sessions number is `minimum` or more
     # TODO: return the count
-    pass
+#    pass
 
-def show_long_bookings(records, minimum):
+#def show_long_bookings(records, minimum):
     # TODO: print a sentence with the same count in it. Only print.
-    pass
+#    pass
 
-print("returned:", count_long_bookings(signups, 4))
-print("returned:", count_long_bookings(signups, 2))
+#print("returned:", count_long_bookings(signups, 4))
+#print("returned:", count_long_bookings(signups, 2))
 
-handed_back = show_long_bookings(signups, 4)
-print("what show_long_bookings handed back:", handed_back)
+#handed_back = show_long_bookings(signups, 4)
+#print("what show_long_bookings handed back:", handed_back)
 
 # Your answer:
 #
@@ -184,16 +184,16 @@ print("what show_long_bookings handed back:", handed_back)
 # Both versions run clean. Decide which of the two you would trust in a file
 # you did not write, and say what in the call line told you.
 
-sessions_cutoff = 4
+#sessions_cutoff = 4
 
-def count_reaching_outside(records):
+#def count_reaching_outside(records):
     # TODO: same count as count_long_bookings, but take NO minimum
     # parameter. Read sessions_cutoff from outside the function instead.
-    pass
+#    pass
 
-print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+#print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
 
-sessions_cutoff = 2
+#sessions_cutoff = 2
 
 # TODO: call count_reaching_outside(signups) again, unchanged, and print it
 # TODO: print count_long_bookings(signups, 4) underneath for comparison
@@ -224,25 +224,25 @@ sessions_cutoff = 2
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
 
-def log_signup(record, previous_member):
+#def log_signup(record, previous_member):
     # TODO: pull the member name out of `record`
     # TODO: print the previous member and this one on one line
     # TODO: return this member's name
-    pass
+#    pass
 
-last_member = "nobody yet"
+#last_member = "nobody yet"
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
 
-last_seen = "nobody yet"
+#last_seen = "nobody yet"
 
-def log_signup_broken(record):
+#def log_signup_broken(record):
     # Leave this body exactly as written. It is supposed to raise.
-    print("previous:", last_seen)
-    last_seen = record.split(",")[0]
-    return last_seen
+#    print("previous:", last_seen)
+#    last_seen = record.split(",")[0]
+#    return last_seen
 
-log_signup_broken(signups[2])
+#log_signup_broken(signups[2])
 
 # Your answer:
 #
@@ -291,15 +291,15 @@ log_signup_broken(signups[2])
 
 # Three function names. Everything else is yours.
 
-def sessions_in(record):
-    pass
+#def sessions_in(record):
+#    pass
 
-def signups_for(records, member):
-    pass
+#def signups_for(records, member):
+#    pass
 
-def total_for(records, member):
+#def total_for(records, member):
     # This one should get its work done by calling the other two.
-    pass
+#    pass
 
 # TODO: print a line per member
 
