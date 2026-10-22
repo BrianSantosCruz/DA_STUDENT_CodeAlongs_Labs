@@ -44,17 +44,17 @@ SUBMIT
 
 # 1. What does one row represent?
 # Your answer:
-#
+# One row represents each member's sign-up log, which features their name, class, and sessions in three different columns.
 #
 
 # 2. Which fields hold numbers, and which hold text?
 # Your answer:
-#
+# Member and class_name both hold text, whilst sessions holds numbers.
 #
 
 # 3. What already looks wrong, missing or inconsistent?
 # Your answer:
-#
+# The data appears unorganized and inconsistent between the amount of sessions.
 #
 
 ############################################################################
@@ -69,6 +69,10 @@ SUBMIT
 #    class: add the third field down all 13 records. Total sessions for Swim
 #    only: add that same field, but only on the records whose class is Swim.
 #    Write both in a comment before you run anything.
+
+# Total sessions: 45
+# Total Swim sessions: 15
+
 # 2. Write total_sessions(records) so it adds up the sessions column across
 #    every record in records and hands the total back with return, not
 #    print.
@@ -78,17 +82,22 @@ SUBMIT
 # The arithmetic is the same arithmetic a plain loop would do. What changes
 # is that the answer comes back to you instead of going to the screen.
 
-with open("data/rec_center_signups.txt") as f:
+with open("build-it-once/rec_center_signups.txt") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 
 def total_sessions(records):
-    # TODO: add up the sessions column across every record in `records`
-    # TODO: hand the total back to whoever called this. Do not print it.
-    pass
+    count = 0
+    for x in records:
+        x.split(",")
+        count += int(sessions)
+    return count
 
 swim_only = []
-# TODO: fill swim_only with just the Swim records
+for x in signups:
+    record.split(",")
+    if class_name == "Swim":
+        swim_only.append(x)
 
 print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
