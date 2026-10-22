@@ -236,7 +236,7 @@ print("the row it never saw:", shifts[-1])
 # - One thing you would do differently starting these two days over. If you
 #   are still holding a question, bring the question. You will not be the
 #   only one.
-#
+
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
