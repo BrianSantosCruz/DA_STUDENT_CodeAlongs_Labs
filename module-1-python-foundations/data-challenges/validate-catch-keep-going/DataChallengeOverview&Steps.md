@@ -50,6 +50,11 @@ and no bad row may vanish without a reason.
 
 </details>
 
+## AI Toolkit
+
+<details>
+<summary>Open when you use AI: prompts to try and how to check what comes back</summary>
+
 > **AI techniques you have so far** (taught by Day 9)
 >
 > - **Verify against your own work** *(Module 0)*: Check every AI answer against a hand count, the data file, or a run of your own code.
@@ -60,8 +65,6 @@ and no bad row may vanish without a reason.
 > - **One-shot prompting** *(Day 5)*: Show one example of the answer shape you want, taken from a different problem.
 >
 > The tips below use only these.
-
-## AI Toolkit
 
 Each tip below pairs one skill this challenge grades with one way to use AI on it. Copy the prompt, then do the check. A prompt you never check is just a guess.
 
@@ -124,6 +127,8 @@ name the except clause that would catch exactly that and nothing else.
 ```
 
 **Check:** The exception it names must match the last line of your own traceback, word for word.
+
+</details>
 
 ## The Data
 

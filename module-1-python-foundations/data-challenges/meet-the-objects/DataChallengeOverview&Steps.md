@@ -51,6 +51,11 @@ station from one list, and the report has been quietly wrong ever since.
 
 </details>
 
+## AI Toolkit
+
+<details>
+<summary>Open when you use AI: prompts to try and how to check what comes back</summary>
+
 > **AI techniques you have so far** (taught by Day 13)
 >
 > - **Verify against your own work** *(Module 0)*: Check every AI answer against a hand count, the data file, or a run of your own code.
@@ -65,8 +70,6 @@ station from one list, and the report has been quietly wrong ever since.
 > - **Data privacy** *(Day 12)*: Never paste real personal data, passwords or keys. Use made-up rows in the same shape.
 >
 > The tips below use only these.
-
-## AI Toolkit
 
 Each tip below pairs one skill this challenge grades with one way to use AI on it. Copy the prompt, then do the check. A prompt you never check is just a guess.
 
@@ -134,6 +137,8 @@ can answer it.
 ```
 
 **Check:** Run each question against both lists together, and agree on one list you can each defend.
+
+</details>
 
 ## The Data
 

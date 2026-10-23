@@ -51,6 +51,11 @@ huge function. Nobody could change one part without breaking the rest.
 
 </details>
 
+## AI Toolkit
+
+<details>
+<summary>Open when you use AI: prompts to try and how to check what comes back</summary>
+
 > **AI techniques you have so far** (taught by Day 11)
 >
 > - **Verify against your own work** *(Module 0)*: Check every AI answer against a hand count, the data file, or a run of your own code.
@@ -61,8 +66,6 @@ huge function. Nobody could change one part without breaking the rest.
 > - **One-shot prompting** *(Day 5)*: Show one example of the answer shape you want, taken from a different problem.
 >
 > The tips below use only these.
-
-## AI Toolkit
 
 Each tip below pairs one skill this challenge grades with one way to use AI on it. Copy the prompt, then do the check. A prompt you never check is just a guess.
 
@@ -119,6 +122,8 @@ Output: One line per function: does it change, and why?
 ```
 
 **Check:** After Step 4, compare its prediction with the functions you actually had to edit.
+
+</details>
 
 ## The Data
 

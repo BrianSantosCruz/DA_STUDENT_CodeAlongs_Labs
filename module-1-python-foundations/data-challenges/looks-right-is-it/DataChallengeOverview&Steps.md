@@ -51,6 +51,11 @@ numbers.
 
 </details>
 
+## AI Toolkit
+
+<details>
+<summary>Open when you use AI: prompts to try and how to check what comes back</summary>
+
 > **AI techniques you have so far** (taught by Day 18)
 >
 > - **Verify against your own work** *(Module 0)*: Check every AI answer against a hand count, the data file, or a run of your own code.
@@ -65,8 +70,6 @@ numbers.
 > - **Data privacy** *(Day 12)*: Never paste real personal data, passwords or keys. Use made-up rows in the same shape.
 >
 > The tips below use only these.
-
-## AI Toolkit
 
 Each tip below pairs one skill this challenge grades with one way to use AI on it. Copy the prompt, then do the check. A prompt you never check is just a guess.
 
@@ -113,6 +116,8 @@ I find where the bad value came from?
 ```
 
 **Check:** Use it on your Step 1 traceback, print the bad value with `repr()`, and find that exact value in the CSV.
+
+</details>
 
 ## The Data
 

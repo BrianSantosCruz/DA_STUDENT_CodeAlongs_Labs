@@ -53,6 +53,11 @@ timed.
 
 </details>
 
+## AI Toolkit
+
+<details>
+<summary>Open when you use AI: prompts to try and how to check what comes back</summary>
+
 > **AI techniques you have so far** (taught by Day 6)
 >
 > - **Verify against your own work** *(Module 0)*: Check every AI answer against a hand count, the data file, or a run of your own code.
@@ -63,8 +68,6 @@ timed.
 > - **One-shot prompting** *(Day 5)*: Show one example of the answer shape you want, taken from a different problem.
 >
 > The tips below use only these.
-
-## AI Toolkit
 
 Each tip below pairs one skill this challenge grades with one way to use AI on it. Copy the prompt, then do the check. A prompt you never check is just a guess.
 
@@ -124,6 +127,8 @@ name one job where my choice would stop being the right one.
 ```
 
 **Check:** Answer its questions with your own numbers from Step 4, and keep any choice your numbers back up.
+
+</details>
 
 ## The Data
 
