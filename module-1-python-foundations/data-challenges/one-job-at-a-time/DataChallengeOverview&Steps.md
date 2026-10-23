@@ -147,7 +147,12 @@ Step 1 gives you `read_donations(path)`, which reads the file. Call it with `DAT
 4. **Reject a blank category, then a pounds value `float()` cannot convert,** catching it with `except ValueError`. (`float()` from Day 8; `try/except` from Day 10)
 5. **Write one loop over the records** that appends usable ones to `valid` and prints the ID and reason for each rejection. (`.append()` from Day 2)
 
-*Work under `# Step 1` in `one-job-at-a-time_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 1` in `one-job-at-a-time_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 1, answer 1:` in the .py, and so on:
+
+1. Before you code: what does one record hold, and which records already look wrong?
+2. Name three things your validator promises about each record it keeps.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -166,7 +171,11 @@ Move your field-count check to the bottom of the validator and run it again. Com
 6. **Put no validation inside it.** `validate_donation()` already did that job.
 7. **Run it** on `valid` and hand-check one category's pounds off the CSV. (`.items()` from Day 7)
 
-*Work under `# Step 2` in `one-job-at-a-time_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 2` in `one-job-at-a-time_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 2, answer 1:` in the .py, and so on:
+
+1. Hand-count one category's pounds off the CSV. Which category, what did you get, and does it match your printed line?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -197,7 +206,12 @@ Be ready to answer **"why did you do it that way?"**
 5. **Run the given roll-call loop.** It prints each function's name and the first line of its docstring. (`.__name__` from Day 8)
    - **New: `.__doc__`** holds a function's docstring as text. If `total()` has the docstring `"Add up the pounds."`, then `total.__doc__` gives `'Add up the pounds.'`.
 
-*Work under `# Step 3` in `one-job-at-a-time_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 3` in `one-job-at-a-time_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 3, answer 1:` in the .py, and so on:
+
+1. What did `print(len)` and `print(len("abc"))` each print, and what do the parentheses do?
+2. Read the four printed docstring lines with your partner. Does any one need "and" twice?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -208,13 +222,18 @@ In a scratch file, write `def shout(word): return word.upper()` and `def apply(j
 
 ### Step 4: Swap In `summarize_by_day()` and Count the Functions You Edited
 
-1. **Write `summarize_by_day(valid_records)`** with its own docstring. Same input and output shape as `summarize_donations()`, keyed by the date in `parts[4]`.
+1. **Write `summarize_by_day(valid_records)`** with its own docstring. Same input and output shape as `summarize_donations()`, but a `"by_day"` dict keyed by the date in `parts[4]` replaces `"by_category"`.
 2. **Call the same `run_pipeline()`,** handing it `summarize_by_day` instead. (`passing a function` from Step 3)
-3. **Read `donation_summary.json` back** with `json.load()` rather than trusting the dict in memory. (`json.load()` from Day 8)
+3. **Read `donation_summary.json` back** with `json.load()`, inside a `with open()` block, rather than trusting the dict in memory. (`json.load()` from Day 8)
 4. **Run the given prints:** the totals, then one line per date in order. (`sorted()` from Day 7)
 5. **Count how many of your other functions you had to edit** for the swap.
 
-*Work under `# Step 4` in `one-job-at-a-time_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 4` in `one-job-at-a-time_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 4, answer 1:` in the .py, and so on:
+
+1. How many of your other functions did you edit for the swap? If any, what was the summarizer reaching into?
+2. Three dates show only 1 donation. Why, and what should the coordinator see?
 
 <details>
 <summary>Stuck? Open this.</summary>

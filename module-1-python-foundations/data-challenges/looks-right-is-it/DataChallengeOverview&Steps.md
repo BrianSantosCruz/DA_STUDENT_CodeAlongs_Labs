@@ -134,14 +134,20 @@ The top of your .py already reads the file for you. `lines` is a list of strings
 
 *Expect this step to raise `TypeError`. That is the point, not a bug.*
 
-1. **Add up Rosa's hours by hand.** Find every `E101` row in the CSV and write the total under `# Your answer:`.
+1. **Add up Rosa's hours by hand.** Find every `E101` row in the CSV and write the total under `# Step 1, answer 1:`.
 2. **Research how to read a traceback** with your group, before you run anything. (`traceback` from Day 10)
 3. **Run the file as given** and read the traceback from the bottom up. Note the function and the line it ended on.
 4. **Print the bad value.** Add `print(repr(hours))` as the first line of `add_hours()`, run again, and find that value in the CSV. (`repr()` from Day 14)
 5. **Walk one frame up** to the line that picked that value. Fix it there: read the hours column, and turn it into a number. (`parts[i]` and `int()` from Day 1)
 6. **Re-run** and check the total against your hand count.
 
-*Work under `# Step 1` in `looks-right-is-it_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 1` in `looks-right-is-it_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 1, answer 1:` in the .py, and so on:
+
+1. Before you run: Rosa's weekly hours (E101), added up by hand from the CSV.
+2. How to read a traceback, in 2-3 bullets: what the last line tells you, what each block above it tells you, and where you found that out.
+3. Which function the traceback ended in, and which line really held the bug.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -161,7 +167,13 @@ The top of your .py already reads the file for you. `lines` is a list of strings
 5. **Replace the hand-typed `staff` list** with an empty list and one loop over `lines[1:]` that appends each employee ID once. (`.append()` from Day 2; `not in` from Day 7)
 6. **Print how many employees `staff` holds,** and check that every employee in the file has a line. (`len()` from Day 2)
 
-*Work under `# Step 2` in `looks-right-is-it_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 2` in `looks-right-is-it_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 2, answer 1:` in the .py, and so on:
+
+1. Before you run: how many employees are in the CSV, counted by eye?
+2. How many lines printed before the crash, and which ID did it stop on?
+3. Where the bug lives, in the division line or somewhere above it, and why, in one sentence.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -191,7 +203,13 @@ Be ready to answer **"why did you do it that way?"**
 5. **Find the one line that explains the pattern** and move it, so every employee starts at 0.
 6. **Re-run and check all five numbers** against the CSV, not just Rosa's.
 
-*Work under `# Step 3` in `looks-right-is-it_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 3` in `looks-right-is-it_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 3, answer 1:` in the .py, and so on:
+
+1. Before you run: Rosa's and Mei's weekly hours, added up by hand from the CSV.
+2. What `total` held at the start of each employee's count, and the one line that explains it.
+3. Why is Rosa's number right while Priya's equals the whole staff's hours for the week?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -210,7 +228,13 @@ With the "starting" print in place, `E102` should start at 0. If it starts at 40
 5. **Check every other line that compares against `40`** and fix it the same way.
 6. **Re-run and check** all three hand-worked figures and the headcount.
 
-*Work under `# Step 4` in `looks-right-is-it_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 4` in `looks-right-is-it_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 4, answer 1:` in the .py, and so on:
+
+1. Before you run: Rosa's, Darnell's and Mei's weekly pay, worked out by hand from the handbook rule.
+2. The two bugs you found, each with its line and what you changed it to.
+3. Why can only Rosa's exactly-40 week catch one of the two bugs?
 
 <details>
 <summary>Stuck? Open this.</summary>

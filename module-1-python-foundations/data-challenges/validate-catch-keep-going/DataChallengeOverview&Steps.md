@@ -148,11 +148,16 @@ The top of your .py already reads the file for you. `header` is the column-name 
 3. **Check the field count first.** Return `False` and a reason when `len(fields)` is not `EXPECTED_FIELDS`. (`len()` from Day 2; `!=` from Day 9)
    - **New: `return a, b`** hands back two values at once, as a tuple. If `pair()` ends with `return True, "ok"`, then `ok, reason = pair()` sets `ok` to `True` and `reason` to `"ok"`.
    - **New: `str()`** turns a value into text so you can join it to other text. `"count: " + str(4)` gives `"count: 4"`.
-4. **Unpack the five fields into five names.** Return `False` and a reason for an empty borough, or for a status not in `ALLOWED_STATUS`. (`not in` from Day 7)
+4. **Unpack the five fields into five names** that match the header: `request_id`, `complaint_type`, `borough`, `days_open`, `status`. Return `False` and a reason for an empty borough, or for a status not in `ALLOWED_STATUS`. (`not in` from Day 7)
 5. **Return `True` and `"ok"`** when every check passes.
 6. **Run the three test rows** at the bottom of the step before you point the validator at the whole file.
 
-*Work under `# Step 1` in `validate-catch-keep-going_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 1` in `validate-catch-keep-going_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 1, answer 1:` in the .py, and so on:
+
+1. Before you code: two or three sentences on what is in the file. What does one row hold, and what already looks wrong?
+2. How does the caller take the two returned values apart in one line, and what is the function really handing back?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -170,7 +175,12 @@ The top of your .py already reads the file for you. `header` is the column-name 
 5. **Run it** and compare `valid` with your hand count.
 6. **Read every row that passed, one by one,** and ask whether any got through that should not have.
 
-*Work under `# Step 2` in `validate-catch-keep-going_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 2` in `validate-catch-keep-going_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 2, answer 1:` in the .py, and so on:
+
+1. Before you run: how many rows fail your three rules by your own hand count, and which rule does each break?
+2. Read the rows that passed. Which ones got through that should not have, and why can your validator not see them?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -202,7 +212,13 @@ Be ready to answer **"why did you do it that way?"**
 5. **Add no protection at all.** No `try`, no extra `if`. Run it and read the whole traceback.
 6. **Comment out this step's code** once you have your answers, so Step 4 can run.
 
-*Work under `# Step 3` in `validate-catch-keep-going_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 3` in `validate-catch-keep-going_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 3, answer 1:` in the .py, and so on:
+
+1. Before you run: how many report lines print before it crashes, and which row stops it?
+2. The last line of the traceback, exactly as printed, and how many rows were counted before it.
+3. What happens to the rows the loop never reached?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -222,7 +238,13 @@ If it runs to the end, print `row.split(",")[3]` for each surviving row and chec
 7. **Run it** and check that `counted` plus `skipped` is 15.
    - **New: `round()`** rounds a number to the number of decimal places you give it. `round(8.24, 1)` gives `8.2`.
 
-*Work under `# Step 4` in `validate-catch-keep-going_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 4` in `validate-catch-keep-going_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 4, answer 1:` in the .py, and so on:
+
+1. Before you run: how many rows get skipped now, and which ones did your Day 1 validator let through?
+2. For `3 days` and for `-3`: did an `if` or a `try` catch it, and could the other tool have?
+3. Does `counted` plus `skipped` account for every row? Show the sum.
 
 <details>
 <summary>Stuck? Open this.</summary>

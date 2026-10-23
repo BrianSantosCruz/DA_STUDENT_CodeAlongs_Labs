@@ -146,7 +146,11 @@ The top of your .py already reads the directory for you. `members` is a list wit
 3. **Return two things when the ID matches:** the row and the count. When nothing matches, return `None` and the count. (`return a, b` from Day 9; `None` from Day 3)
 4. **Run the file** and compare the count with your prediction.
 
-*Work under `# Step 1` in `lookups-matter_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 1` in `lookups-matter_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 1, answer 1:` in the .py, and so on:
+
+1. Before you run: your predicted count for `M1150`, and how you got it.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -161,10 +165,15 @@ Look up `M1001` and `M1002`: they should report 1 and 2. If both report the same
 2. **Predict three costs** with the ID-minus-1000 rule: each of the first three swipes, their sum, and a swipe that is not a member.
 3. **Read the swipes into one list, `swipes`,** inside a `with open(CHECKINS_FILE)` block. (`with open()` from Day 1)
    - **New: `.splitlines()`** splits text into a list with one item per line. `"M1004\nM1012".splitlines()` gives `['M1004', 'M1012']`.
-4. **Write one loop over `swipes`** that calls `find_linear()` and prints each ID, the name or `NOT A MEMBER`, and the count. (`a, b = f()` from Day 9)
+4. **Write one loop over `swipes`** that calls `find_linear()` and prints a line like `M1004 | Dev Okafor | comparisons: 4`, or `M1313 | NOT A MEMBER | comparisons: 312` when there is no row. (`a, b = f()` from Day 9)
 5. **Total the morning:** add every count to `linear_total`, and count the swipes that are not members.
 
-*Work under `# Step 2` in `lookups-matter_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 2` in `lookups-matter_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 2, answer 1:` in the .py, and so on:
+
+1. Before you run: the cost of each of the first three swipes, their sum, and the cost of a swipe that is not a member.
+2. Which swipe cost the most, and why?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -178,11 +187,17 @@ The first swipe is `M1004`, so it should cost 4. Every `NOT A MEMBER` line shoul
 1. **Predict the pay-off swipe** from your Step 2 counts and a build cost of one step per member.
 2. **Make one dictionary, `members_by_id`,** that maps each member ID to its row, with one loop that adds 1 to `build_steps` per row. (`dict` from Day 7)
 3. **Write one function, `find_dict(members_by_id, member_id)`,** that returns the row and a count of `1`. There is no loop inside it to count. (`.get()` from Day 16)
-4. **Race the two searches with one loop over `swipes`.** The linear total starts at 0. The dictionary total starts at `build_steps`, because you paid that before the first swipe.
+4. **Race the two searches with one loop over `swipes`.** The linear total starts at 0. The dictionary total starts at `build_steps`, because you paid that before the first swipe. Print a line per swipe like `swipe 1 M1004 | linear so far: 4 | dict so far: 313`.
    - **New: `_`** is a variable name for a value you will not use. `_, count = find_linear(members, "M1001")` keeps only the count, `1`.
-5. **Save the first swipe where the dictionary total is lower** in `pays_off_at`. (`is None` from Day 3)
+5. **Save the number of the first swipe where the dictionary total is lower** in `pays_off_at`. (`is None` from Day 3)
 
-*Work under `# Step 3` in `lookups-matter_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 3` in `lookups-matter_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 3, answer 1:` in the .py, and so on:
+
+1. Before you run: at which swipe does the dict total first drop below the linear total?
+2. Why a dictionary keyed on `member_id` fits the door's job. Quote the swipe where it pulled ahead.
+3. A morning where the plain list would be the better choice.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -200,7 +215,12 @@ After swipe 1, the dictionary total should be your build cost plus 1, and the li
 4. **Ask the AI whether its number counted the build cost.** Then paste your totals back and see if it changes its number.
 5. **Write `verdict` in your own words.** Name `O(n)` and `O(1) Average-Case`, and quote at least one of your counts.
 
-*Work under `# Step 4` in `lookups-matter_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 4` in `lookups-matter_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 4, answer 1:` in the .py, and so on:
+
+1. Hold the AI's claim against your three comparisons. Which one did it match, and which did it miss?
+2. Did its number count the cost of building the dictionary? What did it say when you pasted your totals back?
 
 <details>
 <summary>Stuck? Open this.</summary>

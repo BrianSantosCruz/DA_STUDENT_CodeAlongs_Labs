@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Data Challenge: Pick the Right Container.
-
-Steps, hints and the scenario are in DataChallengeOverview&Steps.md.
-"""
+"""Pick the Right Container: see DataChallengeOverview&Steps.md."""
 
 import json
 
@@ -32,24 +29,25 @@ print("comparisons to find T001:", scan_for("T001", taps))
 print("comparisons to find T040:", scan_for("T040", taps))
 print("comparisons to find T999:", scan_for("T999", taps))
 
-# Your answer: Before you run: your predicted counts for T001, T040 and
-#     T999, and how you got each.
-# Your answer: Which of the three counts should you plan around, and why?
+# Step 1, answer 1:
+#
+# Step 1, answer 2:
+#
 
 
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
-# TODO: loop over the sizes [5, 10, 20, 40]; assign `worst` to
-#       scan_for("T999", taps[:size]) and print `size` and `worst`
-# TODO: assign `pairs` to 0; loop over `taps` with a second loop over
-#       `taps` inside it, adding 1 to `pairs` for every pair
+# TODO: loop over `size` in [5, 10, 20, 40]
+# TODO: assign `worst` to scan_for("T999", taps[:size]); print size, worst
+# TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
+# TODO: add 1 to `pairs` in the inner loop
 # TODO: print len(taps) and `pairs`
-# TODO: assign `big` to len(taps) * 10; print what the scan and the
-#       pair loop would each cost on `big` rows
+# TODO: assign `big` to len(taps) * 10
+# TODO: print the scan's worst case and the pair loop's count on `big` rows
 
-# Your answer: Before you run: every count you expect, with the arithmetic
-#     beside it.
-# Your answer: The scan's pattern in one sentence, then the pair loop's,
-#     with no notation.
+# Step 2, answer 1:
+#
+# Step 2, answer 2:
+#
 
 
 # ===== Day 2 =====
@@ -59,30 +57,29 @@ print("comparisons to find T999:", scan_for("T999", taps))
 # TODO: assign `tap_counts` to an empty list (the count for card_ids[i])
 # TODO: assign `comparisons` to 0
 # TODO: loop over `taps`; assign `card` to row[1] and `found` to False
-# TODO: inside it, loop over range(len(card_ids)); add 1 to
-#       `comparisons`; when card_ids[i] == card, add 1 to
-#       tap_counts[i], set `found` to True and break
-# TODO: after the inner loop, if not found, append `card` to card_ids
-#       and 1 to tap_counts
+# TODO: inside it, loop over range(len(card_ids)); add 1 to `comparisons`
+# TODO: if card_ids[i] == card, add 1 to tap_counts[i], set found, break
+# TODO: after the inner loop, if not found, append `card` and 1 to the lists
 
 busiest = tap_counts.index(max(tap_counts))
 print("distinct cards:", len(card_ids))
 print("comparisons the two parallel lists needed:", comparisons)
 print("busiest card:", card_ids[busiest], "with", max(tap_counts), "taps")
 
-# Your answer: Before you run: how many comparisons do you expect?
-# Your answer: After: the real count, and why it is bigger than the number
-#     of rows.
+# Step 3, answer 1:
+#
+# Step 3, answer 2:
+#
 
 
 # Step 4: Count Taps Per Card With a Dictionary, and Stations With a Set
 # TODO: assign `taps_by_card` to an empty dict (card ID: tap count)
 # TODO: assign `lookups` to 0
-# TODO: loop over `taps`; add 1 to `lookups`, then add 1 to row[1]'s
-#       count in `taps_by_card`, or set it to 1 if it is not there yet
+# TODO: loop over `taps`; add 1 to `lookups`
+# TODO: add 1 to row[1]'s count in `taps_by_card`, or set it to 1 if new
 # TODO: assign `stations` to set(); loop over `taps` and .add() row[2]
-# TODO: assign `repeat_riders` to 0; loop over `taps_by_card` and add 1
-#       for every card whose count is more than 1
+# TODO: assign `repeat_riders` to 0
+# TODO: loop over `taps_by_card`; add 1 to `repeat_riders` if a count is > 1
 
 print("distinct cards:", len(taps_by_card))
 print("lookups the dictionary needed:", lookups)
@@ -90,21 +87,20 @@ print("unique stations:", len(stations), sorted(stations))
 print("cards that tapped more than once:", repeat_riders)
 print("taps for C001:", taps_by_card["C001"])
 
-# Your answer: Before you run: your `lookups` prediction and the rule behind
-#     it.
-# Your answer: Finish "As the Input Size grows..." for the parallel lists,
-#     then for the dictionary.
-# Your answer: For each container, name its job and how it finds what it
-#     needs. What would a list have cost you for `stations`?
-# Your answer: Which card explains the gap between distinct cards and repeat
-#     riders?
+# Step 4, answer 1:
+#
+# Step 4, answer 2:
+#
+# Step 4, answer 3:
+#
+# Step 4, answer 4:
+#
 
 
 # ===== Day 3 =====
 
 # Step 5: Save the Summary as JSON and Read the TypeError a Set Causes
-# TODO: replace each None: the row count, the distinct-card count,
-#       `stations` exactly as you built it, and `taps_by_card`
+# TODO: replace each None with your Day 2 value; keep `stations` a set
 summary = {
     "service_day": "2026-03-02",
     "total_taps": None,
@@ -119,18 +115,18 @@ print("about to serialize", len(summary), "keys")
 text = json.dumps(summary, indent=2)
 print(text)
 
-# Your answer: The last line of the error, exactly as printed.
-# Your answer: Which key caused it, and why, in your own words.
-# Your answer: Did `about to serialize` print before the error? What does
-#     that tell you?
+# Step 5, answer 1:
+#
+# Step 5, answer 2:
+#
+# Step 5, answer 3:
+#
 
 
 # Step 6: Write `tap_summary.json`, Reload It, and Check Which Types Survived
 # TODO: assign summary["stations"] to a type JSON can hold; keep the key
-# TODO: write `summary` to "tap_summary.json" with json.dump(), inside
-#       a with open("tap_summary.json", "w") block
-# TODO: replace None with json.load() of "tap_summary.json", inside a
-#       second with open(...) block
+# TODO: json.dump() `summary` into a with open("tap_summary.json", "w")
+# TODO: replace None with json.load() of "tap_summary.json"
 reloaded = None
 
 print("total_taps came back as:", reloaded["total_taps"])
@@ -139,7 +135,7 @@ print("C001 straight out of the file:", reloaded["taps_by_card"]["C001"])
 print("stations came back as a", type(reloaded["stations"]).__name__)
 print("round trip identical:", reloaded["taps_by_card"] == taps_by_card)
 
-# Your answer: Can the overnight job get one card's count from this file
-#     without the raw log? How do you know?
-# Your answer: Which container survived the round trip, and which came back
-#     as something else?
+# Step 6, answer 1:
+#
+# Step 6, answer 2:
+#

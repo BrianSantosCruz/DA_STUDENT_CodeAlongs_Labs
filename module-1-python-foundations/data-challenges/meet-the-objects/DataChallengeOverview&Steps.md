@@ -160,7 +160,13 @@ The top of your .py already reads the file for you. `stations` is a list with on
 4. **Write one loop over `range(len(names))`** that prints each name beside the bike count at the same position. (`range()` from Day 1; `len()` from Day 2)
 5. **Check the report against the file, station by station.** Nothing raises an error, so your eyes are the only check.
 
-*Work under `# Step 1` in `meet-the-objects_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 1` in `meet-the-objects_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 1, answer 1:` in the .py, and so on:
+
+1. Describe the data file in two or three sentences. What is one record? Which fields are numbers, and which are text? What looks wrong?
+2. What `.pop(2)` removes, what it hands back, and what happens to the positions after it.
+3. Which stations got a bike count that was never theirs? Whose real count does nobody see?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -174,10 +180,17 @@ Add a second loop that prints `stations[i]["name"]` and `stations[i]["bikes_avai
 1. **Draft your own attribute list on paper, alone,** with the dispatcher's phrase beside each one. Then compare with your partner and agree on one list.
 2. **Write one class, `Station`,** with an `__init__` that takes `name` (text), `capacity` and `bikes_available` (whole numbers), plus any field your list keeps. (`class`, `__init__` and `self` from Day 13)
 3. **Write one method, `needs_restock()`,** that returns `True` when the station holds fewer bikes than a quarter of its capacity. Read both numbers from `self`, not from parameters.
-4. **Build one list, `fleet`,** with one loop that makes a `Station` from every record.
+4. **Build one list, `fleet`,** with one loop that makes a `Station` from every record, passing any extra field you added.
 5. **Pick two stations whose `needs_restock()` answers match.** Print both, set one station's bike count to 0, and print both again. Exactly one answer should move.
 
-*Work under `# Step 2` in `meet-the-objects_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 2` in `meet-the-objects_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 2, answer 1:` in the .py, and so on:
+
+1. Your own list, made before you compared. Put the dispatcher's words beside each attribute.
+2. Where your two lists differed, what each of you argued, and which list you kept.
+3. Which field from the file you left out, and why the dispatcher does not need it.
+4. Why your two stations prove independence, with their answers before and after.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -205,7 +218,12 @@ Be ready to answer **"why did you do it that way?"**
 3. **Rebuild `fleet` from the new class,** right below it. Stations built from the old class keep the old behavior.
 4. **Run the file** and compare the four prints with your predictions.
 
-*Work under `# Step 3` in `meet-the-objects_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 3` in `meet-the-objects_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 3, answer 1:` in the .py, and so on:
+
+1. Before you run: the shape you expect from each of the four prints, in order.
+2. Which prediction was wrong, and which method does a list use instead of `__str__`?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -222,7 +240,13 @@ Before you decide your `__str__` is broken, print `str(fleet[0])` and `repr(flee
 4. **Rebuild `fleet`, then build one list, `van_list`,** with one loop that appends every station whose `needs_restock()` returns `True`.
 5. **Run the two given prints:** the whole list first, then one station per line.
 
-*Work under `# Step 4` in `meet-the-objects_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 4` in `meet-the-objects_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 4, answer 1:` in the .py, and so on:
+
+1. Before you run: how many stations land in `van_list`, and which method `print(van_list)` will use.
+2. What each display method is for, and who reads it.
+3. Which printout you would hand the dispatcher, and why.
 
 <details>
 <summary>Stuck? Open this.</summary>

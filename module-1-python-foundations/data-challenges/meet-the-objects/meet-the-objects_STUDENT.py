@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Data Challenge: Meet the Objects.
-
-Steps, hints and the scenario are in DataChallengeOverview&Steps.md.
-"""
+"""Meet the Objects: see DataChallengeOverview&Steps.md for the steps."""
 
 import json
 
@@ -16,50 +13,44 @@ with open(DATA_FILE) as f:
 
 # Step 1: Reproduce the Parallel-List Bug and Name the Wrong Stations
 # TODO: assign `names` and `bikes` to two empty lists
-# TODO: loop over `stations`; append each station's "name" to `names`
-#       and its "bikes_available" to `bikes`
+# TODO: loop over `stations`; append each one's "name" to `names`
+# TODO: append the same station's "bikes_available" to `bikes`
 # TODO: remove the third station from `names` only, with names.pop(2)
 
 print("stations in the file:", len(stations))
-# TODO: loop over range(len(names)); print names[i], "|", bikes[i]
-#       and "bikes" on one line
+# TODO: loop over range(len(names)); print names[i], "|", bikes[i], "bikes"
 
-# Your answer: Describe the data file in two or three sentences. What is one
-#     record? Which fields are numbers, and which are text? What looks
-#     wrong?
-# Your answer: What `.pop(2)` removes, what it hands back, and what happens
-#     to the positions after it.
-# Your answer: Which stations got a bike count that was never theirs? Whose
-#     real count does nobody see?
+# Step 1, answer 1:
+#
+# Step 1, answer 2:
+#
+# Step 1, answer 3:
+#
 
 
 # Step 2: Define the Station Class and Prove Two Instances Are Independent
 class Station:
-    # TODO: add an __init__ that takes name (str), capacity (int) and
-    #       bikes_available (int), and assigns each to self.<same name>
-    # TODO: add one parameter and one self.<name> line for each other
-    #       field your agreed attribute list keeps
-    # TODO: add a method needs_restock(self) that returns True when
-    #       self.bikes_available is less than self.capacity / 4
+    # TODO: add __init__ with name (str), capacity and bikes_available (int)
+    # TODO: in __init__, assign each parameter to self.<same name>
+    # TODO: add a parameter and self.<name> for each extra field you agreed
+    # TODO: add needs_restock(self): True if bikes_available < capacity / 4
     pass
 
 
-# TODO: assign `fleet` to an empty list; loop over `stations` and
-#       append Station(s["name"], s["capacity"], s["bikes_available"])
-#       for each one, plus any field you added
-# TODO: assign `busy` and `quiet` to two stations in `fleet` whose
-#       needs_restock() answers are the same right now
-# TODO: print both answers; set busy.bikes_available to 0; then print
-#       both answers again
+# TODO: assign `fleet` to []; loop over `stations` as `s`
+# TODO: append Station(s["name"], s["capacity"], s["bikes_available"])
+# TODO: assign `busy`, `quiet` to two stations with equal needs_restock()
+# TODO: print both needs_restock() answers
+# TODO: set busy.bikes_available to 0, then print both answers again
 
-# Your answer: Your own list, made before you compared. Put the dispatcher's
-#     words beside each attribute.
-# Your answer: Where your two lists differed, what each of you argued, and
-#     which list you kept.
-# Your answer: Which field from the file you left out, and why the
-#     dispatcher does not need it.
-# Your answer: Why your two stations prove independence, with their answers
-#     before and after.
+# Step 2, answer 1:
+#
+# Step 2, answer 2:
+#
+# Step 2, answer 3:
+#
+# Step 2, answer 4:
+#
 
 
 # ===== Day 2 =====
@@ -69,34 +60,34 @@ print(fleet[0])
 print(fleet[:2])
 
 
-# TODO: copy your Station class from Step 2 here, then add a method
-#       __str__(self) that returns text like
-#       "Grand Army Plaza: 6 of 48 bikes", built from self.name,
-#       self.bikes_available and self.capacity
+# TODO: copy your Station class from Step 2 here
+# TODO: add __str__(self) to return text like "Grand Army Plaza: 6 of 48 bikes"
+# TODO: build it from self.name, self.bikes_available and self.capacity
 # TODO: rebuild `fleet` from this class with the same loop as Step 2
 
 print(fleet[0])
 print(fleet[:2])
 
-# Your answer: Before you run: the shape you expect from each of the four
-#     prints, in order.
-# Your answer: Which prediction was wrong, and which method does a list use
-#     instead of `__str__`?
+# Step 3, answer 1:
+#
+# Step 3, answer 2:
+#
 
 
 # Step 4: Add `__repr__` and Print the Van List for You and the Dispatcher
-# TODO: copy your Station class from Step 3 here, then add a method
-#       __repr__(self) that returns text like
-#       "Station('Grand Army Plaza', 6)"
+# TODO: copy your Station class from Step 3 here
+# TODO: add __repr__(self) to return text like "Station('Grand Army Plaza', 6)"
 # TODO: rebuild `fleet` from this class with the same loop as Step 2
-# TODO: assign `van_list` to an empty list; loop over `fleet` and
-#       append every station whose needs_restock() returns True
+# TODO: assign `van_list` to []; loop over `fleet`
+# TODO: append each station whose needs_restock() returns True to `van_list`
 
 print(van_list)
 for station in van_list:
     print(station)
 
-# Your answer: Before you run: how many stations land in `van_list`, and
-#     which method `print(van_list)` will use.
-# Your answer: What each display method is for, and who reads it.
-# Your answer: Which printout you would hand the dispatcher, and why.
+# Step 4, answer 1:
+#
+# Step 4, answer 2:
+#
+# Step 4, answer 3:
+#

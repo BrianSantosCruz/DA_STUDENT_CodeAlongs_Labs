@@ -150,7 +150,12 @@ The top of your .py already reads the file for you. `header` is the first row an
 5. **Return `comparisons` after the loop too,** so a tap that is never found still reports its work.
 6. **Run the file** and compare the three printed counts with your predictions.
 
-*Work under `# Step 1` in `pick-the-right-container_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 1` in `pick-the-right-container_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 1, answer 1:` in the .py, and so on:
+
+1. Before you run: your predicted counts for T001, T040 and T999, and how you got each.
+2. Which of the three counts should you plan around, and why?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -168,7 +173,12 @@ The top of your .py already reads the file for you. `header` is the first row an
 4. **Print the cost of both on 400 rows** using `len(taps) * 10`, since there is no bigger file.
 5. **Say each pattern in one sentence:** one for the scan, one for the pair loop.
 
-*Work under `# Step 2` in `pick-the-right-container_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 2` in `pick-the-right-container_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 2, answer 1:` in the .py, and so on:
+
+1. Before you run: every count you expect, with the arithmetic beside it.
+2. The scan's pattern in one sentence, then the pair loop's, with no notation.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -201,7 +211,12 @@ Be ready to answer **"why did you do it that way?"**
    - **New: `max()`** gives the largest item in a list. `max([3, 8, 5])` gives `8`.
    - **New: `.index()`** gives the position of the first matching item. `[3, 8, 5].index(8)` gives `1`.
 
-*Work under `# Step 3` in `pick-the-right-container_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 3` in `pick-the-right-container_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 3, answer 1:` in the .py, and so on:
+
+1. Before you run: how many comparisons do you expect?
+2. After: the real count, and why it is bigger than the number of rows.
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -219,7 +234,14 @@ Count `C001`'s rows in the file by eye, then compare with `tap_counts[card_ids.i
 5. **Run it** and put `lookups` next to your Step 3 comparison count.
    - **New: `sorted()`** gives a new list with the items in order. `sorted({"b", "a"})` gives `['a', 'b']`.
 
-*Work under `# Step 4` in `pick-the-right-container_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 4` in `pick-the-right-container_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 4, answer 1:` in the .py, and so on:
+
+1. Before you run: your `lookups` prediction and the rule behind it.
+2. Finish "As the Input Size grows..." for the parallel lists, then for the dictionary.
+3. For each container, name its job and how it finds what it needs. What would a list have cost you for `stations`?
+4. Which card explains the gap between distinct cards and repeat riders?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -249,7 +271,13 @@ Be ready to answer **"why did you do it that way?"**
 3. **Name the key that broke and why,** in your own words, before you look anything up.
 4. **Put `#` in front of** the `json.dumps` line and the `print(text)` line so Step 6 can run.
 
-*Work under `# Step 5` in `pick-the-right-container_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 5` in `pick-the-right-container_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 5, answer 1:` in the .py, and so on:
+
+1. The last line of the error, exactly as printed.
+2. Which key caused it, and why, in your own words.
+3. Did `about to serialize` print before the error? What does that tell you?
 
 <details>
 <summary>Stuck? Open this.</summary>
@@ -267,7 +295,12 @@ The error names a type. Add `for key in summary: print(key, type(summary[key]))`
 5. **Run the five given prints** and compare each type with the one you built on Day 2.
    - **New: `.__name__`** on a type gives that type's name as text. `type([1, 2]).__name__` gives `list`.
 
-*Work under `# Step 6` in `pick-the-right-container_STUDENT.py`. Type written answers as `#` comments under each `# Your answer:` line.*
+*Work under `# Step 6` in `pick-the-right-container_STUDENT.py`.*
+
+**Answer in writing.** Type answer 1 as `#` comments under `# Step 6, answer 1:` in the .py, and so on:
+
+1. Can the overnight job get one card's count from this file without the raw log? How do you know?
+2. Which container survived the round trip, and which came back as something else?
 
 <details>
 <summary>Stuck? Open this.</summary>
