@@ -15,7 +15,7 @@ with open(DATA_FILE) as f:
 # TODO: assign `names` and `bikes` to two empty lists
 # TODO: loop over `stations`; append each one's "name" to `names`
 # TODO: append the same station's "bikes_available" to `bikes`
-# TODO: remove the third station from `names` only, with names.pop(2)
+names.pop(2)
 
 print("stations in the file:", len(stations))
 # TODO: loop over range(len(names)); print names[i], "|", bikes[i], "bikes"

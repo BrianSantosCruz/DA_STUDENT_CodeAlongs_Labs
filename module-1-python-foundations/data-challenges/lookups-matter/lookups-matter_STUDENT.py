@@ -29,7 +29,8 @@ print("comparisons:", count)
 
 
 # Step 2: Total the Comparisons for All 20 Swipes in `door_checkins.txt`
-# TODO: in a with open(CHECKINS_FILE) block, assign `swipes` to its lines
+# TODO: open CHECKINS_FILE in a with block as `f`
+# TODO: inside it, assign `swipes` to f.read().splitlines()
 # TODO: assign `linear_total` and `not_members` to 0
 # TODO: loop over `swipes`; call find_linear(members, member_id)
 # TODO: print the ID, the name or "NOT A MEMBER", and the comparisons
@@ -56,10 +57,13 @@ print("build cost:", build_steps, "| keys in the dict:", len(members_by_id))
 
 # TODO: assign `linear_running` to 0 and `dict_running` to build_steps
 # TODO: assign `pays_off_at` to None and `swipe_number` to 0
-# TODO: loop over `swipes`; add 1 to `swipe_number`
-# TODO: add each search's count to its running total
-# TODO: print swipe_number, the ID and both running totals
-# TODO: the first time dict_running < linear_running, set `pays_off_at`
+for member_id in swipes:
+    # TODO: add 1 to `swipe_number`
+    _, linear_count = find_linear(members, member_id)
+    _, dict_count = find_dict(members_by_id, member_id)
+    # TODO: add each search's count to its running total
+    # TODO: print swipe_number, the ID and both running totals
+    # TODO: the first time dict_running < linear_running, set `pays_off_at`
 
 print("dict pays off at swipe:", pays_off_at)
 print("morning totals | linear:", linear_running, "| dict:", dict_running)
@@ -77,8 +81,8 @@ print("morning totals | linear:", linear_running, "| dict:", dict_running)
 ai_claim = "TODO: paste what your AI actually told you"
 print("AI CLAIM:", ai_claim)
 
-# TODO: assign `front_count` to find_linear()'s count for swipes[0]
-# TODO: assign `absent_count` to the count it gives for "M1313"
+# TODO: unpack find_linear() for swipes[0] into `_, front_count`
+# TODO: unpack find_linear() for "M1313" into `_, absent_count`
 # TODO: assign `ratio` to round(linear_running / dict_running, 1)
 
 print("one front-of-file swipe | linear:", front_count, "| dict: 1")

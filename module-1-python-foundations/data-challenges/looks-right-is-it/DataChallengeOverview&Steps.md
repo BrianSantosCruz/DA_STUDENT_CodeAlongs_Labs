@@ -143,7 +143,7 @@ The top of your .py already reads the file for you. `lines` is a list of strings
 2. **Research how to read a traceback** with your group, before you run anything. (`traceback` from Day 10)
 3. **Run the file as given** and read the traceback from the bottom up. Note the function and the line it ended on.
 4. **Print the bad value.** Add `print(repr(hours))` as the first line of `add_hours()`, run again, and find that value in the CSV. (`repr()` from Day 14)
-5. **Walk one frame up** to the line that picked that value. Fix it there: read the hours column, and turn it into a number. (`parts[i]` and `int()` from Day 1)
+5. **Walk one frame up** to the line that picked that value. Fix it there: read the hours column, and turn it into a number. (`parts[i]` and `int()` from *Trace the Path*, Step 1)
 6. **Re-run** and check the total against your hand count.
 
 *Work under `# Step 1` in `looks-right-is-it_STUDENT.py`.*
@@ -169,8 +169,8 @@ The top of your .py already reads the file for you. `lines` is a list of strings
 2. **Run the file as given.** Count the lines that print before it stops, and note the ID it stopped on.
 3. **Compare `staff` with the file,** one ID at a time.
 4. **Decide where the bug lives:** in the division the traceback names, or in a line above it.
-5. **Replace the hand-typed `staff` list** with an empty list and one loop over `lines[1:]` that appends each employee ID once. (`.append()` from Day 2; `not in` from Day 7)
-6. **Print how many employees `staff` holds,** and check that every employee in the file has a line. (`len()` from Day 2)
+5. **Replace the hand-typed `staff` list** with an empty list and one loop over `lines[1:]` that appends each employee ID once. (`.append()` and `not in` from *Trace the Path*, Step 3)
+6. **Print how many employees `staff` holds,** and check that every employee in the file has a line. (`len()` from *Trace the Path*, Step 3)
 
 *Work under `# Step 2` in `looks-right-is-it_STUDENT.py`.*
 
@@ -202,7 +202,7 @@ Be ready to answer **"why did you do it that way?"**
 ### Step 3: Find Why Four of the Five Weekly Hour Totals Are Wrong
 
 1. **Add up Rosa's and Mei's hours by hand** before you read the code. Nothing in the output says it is wrong, so these two numbers are your only detector.
-2. **Read how `records` is built:** one dict per row, made by unpacking the five fields of `row.split(",")`. (`a, b = ...` from Day 2; `dict` from Day 7; `float()` from Day 8)
+2. **Read how `records` is built:** one dict per row, made by unpacking the five fields of `row.split(",")`. (`a, b = ...` from *Trace the Path*, Step 2; `dict` from Day 7; `float()` from Day 8)
 3. **Run the file** and compare the `E101` and `E103` lines with your two numbers.
 4. **Print `total` at the start of each pass** of the outer loop, and look at what it holds before each count begins.
 5. **Find the one line that explains the pattern** and move it, so every employee starts at 0.
@@ -228,7 +228,7 @@ With the "starting" print in place, `E102` should start at 0. If it starts at 40
 1. **Read the handbook rule:** the first 40 hours of a week are paid at base rate. Hours beyond 40 are paid at 1.5 times base rate.
 2. **Work out three weeks of pay by hand** before you read the code: Rosa (exactly 40 hours), Darnell (a few hours past 40) and Mei (well under 40).
 3. **Run the file** and read both bottom lines: the overtime headcount and the dollar total. (`f-strings` from Day 7)
-   - **New: `:>9,.2f`** inside an f-string's braces lines a number up to the right in 9 spaces, adds commas and shows 2 decimals. `f"{1543.5:>9,.2f}"` gives `' 1,543.50'`.
+   - **New: `:>9,.2f`** inside an f-string's braces lines a number up to the right in 9 spaces, adds commas and shows 2 decimals. `f"{1543.5:>9,.2f}"` gives `' 1,543.50'`. It's written for you in Step 4 of your .py; you'll write it yourself next time.
 4. **Fix `weekly_pay()`** so it matches the rule word for word.
 5. **Check every other line that compares against `40`** and fix it the same way.
 6. **Re-run and check** all three hand-worked figures and the headcount.

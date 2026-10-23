@@ -159,10 +159,10 @@ The top of your .py already reads the file for you. `stations` is a list with on
 ### Step 1: Reproduce the Parallel-List Bug and Name the Wrong Stations
 
 1. **Try `.pop(2)` on a short list of your own** and print the list before and after.
-   - **New: `.pop()`** removes the item at a position and hands it back. After `nums = [4, 7, 9]`, `nums.pop(1)` gives `7` and leaves `nums` as `[4, 9]`.
-2. **Make two lists, `names` and `bikes`,** with one loop over `stations` that appends each station's `"name"` and `"bikes_available"`. (`.append()` from Day 2; `dict["key"]` from Day 7)
-3. **Remove the third station from `names` only** with `names.pop(2)`, the way somebody tidying up at the end of a shift would.
-4. **Write one loop over `range(len(names))`** that prints each name beside the bike count at the same position. (`range()` from Day 1; `len()` from Day 2)
+   - **New: `.pop()`** removes the item at a position and hands it back. After `nums = [4, 7, 9]`, `nums.pop(1)` gives `7` and leaves `nums` as `[4, 9]`. It's written for you in Step 1 of your .py; you'll write it yourself next time.
+2. **Make two lists, `names` and `bikes`,** with one loop over `stations` that appends each station's `"name"` and `"bikes_available"`. (`.append()` from *Trace the Path*, Step 3; `dict["key"]` from Day 7)
+3. **Read the `names.pop(2)` line.** It removes the third station from `names` only, the way somebody tidying up at the end of a shift would.
+4. **Write one loop over `range(len(names))`** that prints each name beside the bike count at the same position. (`range()` from Day 1; `len()` from *Trace the Path*, Step 3)
 5. **Check the report against the file, station by station.** Nothing raises an error, so your eyes are the only check.
 
 *Work under `# Step 1` in `meet-the-objects_STUDENT.py`.*
@@ -218,7 +218,7 @@ Be ready to answer **"why did you do it that way?"**
 
 ### Step 3: Add `__str__` and Find Out Which of Four Prints It Changes
 
-1. **Predict the shape of all four prints** before you run anything. The first two run before you add `__str__`. (`[:n]` from Day 6)
+1. **Predict the shape of all four prints** before you run anything. The first two run before you add `__str__`. (`[:n]` from *Pick the Right Container*, Step 2)
 2. **Copy your `Station` class into this step** and add one method, `__str__()`, that returns text like `Grand Army Plaza: 6 of 48 bikes`. (`__str__` from Day 14; `f-strings` from Day 7)
 3. **Rebuild `fleet` from the new class,** right below it. Stations built from the old class keep the old behavior.
 4. **Run the file** and compare the four prints with your predictions.

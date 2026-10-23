@@ -151,7 +151,7 @@ The top of your .py already reads the file for you. `header` is the first row an
 1. **Predict** how many comparisons a scan makes to find `T001`, `T040` and `T999`. A tap's row number is the number in its ID, and `T999` is not in the file.
 2. **Write one function, `scan_for(tap_id, records)`,** with one loop that goes through every row in `records`. (`def` from Day 3; `for` from Day 1)
 3. **Add 1 to `comparisons` for every row,** before you check it.
-4. **Return `comparisons` the moment `row[0]` equals `tap_id`.** The ID is the row's first field. (`row[0]` from Day 1; `return` from Day 3)
+4. **Return `comparisons` the moment `row[0]` equals `tap_id`.** The ID is the row's first field. (`row[0]` from *Trace the Path*, Step 1; `return` from Day 3)
 5. **Return `comparisons` after the loop too,** so a tap that is never found still reports its work.
 6. **Run the file** and compare the three printed counts with your predictions.
 
@@ -172,8 +172,8 @@ The top of your .py already reads the file for you. `header` is the first row an
 ### Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
 
 1. **Write every count down first** with its arithmetic: the scan at 5, 10, 20 and 40 rows, the pair loop on 40 rows, then both on 400 rows.
-2. **Write one loop over `[5, 10, 20, 40]`** that prints the worst-case `scan_for("T999", ...)` count on the first `size` rows.
-   - **New: `[:n]`** (slicing) gives a new list holding the first `n` items. `[4, 7, 9][:2]` gives `[4, 7]`.
+2. **Read the given loop over `[5, 10, 20, 40]`.** It runs `scan_for("T999", ...)` on the first `size` rows. Inside it, print `size` and `worst`.
+   - **New: `[:n]`** (slicing) gives a new list holding the first `n` items. `[4, 7, 9][:2]` gives `[4, 7]`. It's written for you in Step 2 of your .py; you'll write it yourself next time.
 3. **Write one loop inside a loop** that pairs every tap with every tap, itself included, and adds 1 to `pairs` each time. (`nested loops` from Day 2)
 4. **Print the cost of both on 400 rows** using `len(taps) * 10`, since there is no bigger file.
 5. **Say each pattern in one sentence:** one for the scan, one for the pair loop.
@@ -209,12 +209,12 @@ Be ready to answer **"why did you do it that way?"**
 1. **Predict the comparison count** before you write the loops.
 2. **Make two empty lists:** `card_ids` for each card in the order you first see it, and `tap_counts` for that card's count at the same position.
 3. **Write one loop over `taps`** that sets `card` to the row's card ID, `row[1]`, and `found` to `False`.
-4. **Inside it, write one loop over the positions in `card_ids`** that adds 1 to `comparisons` for every check. (`range()` from Day 1; `len()` from Day 2)
+4. **Inside it, write one loop over the positions in `card_ids`** that adds 1 to `comparisons` for every check. (`range()` from Day 1; `len()` from *Trace the Path*, Step 3)
 5. **On a match,** add 1 to `tap_counts` at that position, set `found` to `True`, and `break`. (`break` from Day 1)
-6. **With no match,** append the card to `card_ids` and `1` to `tap_counts`, so both lists stay the same length. (`.append()` from Day 2)
+6. **With no match,** append the card to `card_ids` and `1` to `tap_counts`, so both lists stay the same length. (`.append()` from *Trace the Path*, Step 3)
 7. **Run it.** The given `busiest` line finds the card with the most taps.
-   - **New: `max()`** gives the largest item in a list. `max([3, 8, 5])` gives `8`.
-   - **New: `.index()`** gives the position of the first matching item. `[3, 8, 5].index(8)` gives `1`.
+   - **New: `max()`** gives the largest item in a list. `max([3, 8, 5])` gives `8`. It's written for you in Step 3 of your .py; you'll write it yourself next time.
+   - **New: `.index()`** gives the position of the first matching item. `[3, 8, 5].index(8)` gives `1`. It's written for you in Step 3 of your .py; you'll write it yourself next time.
 
 *Work under `# Step 3` in `pick-the-right-container_STUDENT.py`.*
 
@@ -237,7 +237,7 @@ Count `C001`'s rows in the file by eye, then compare with `tap_counts[card_ids.i
 3. **Make one set, `stations`,** and `.add()` each row's station, `row[2]`. Write no `if not in` check, because a set keeps only distinct values. (`set()` and `.add()` from Day 7)
 4. **Write one loop over `taps_by_card`** that counts the cards with more than 1 tap into `repeat_riders`.
 5. **Run it** and put `lookups` next to your Step 3 comparison count.
-   - **New: `sorted()`** gives a new list with the items in order. `sorted({"b", "a"})` gives `['a', 'b']`.
+   - **New: `sorted()`** gives a new list with the items in order. `sorted({"b", "a"})` gives `['a', 'b']`. It's written for you in Step 4 of your .py; you'll write it yourself next time.
 
 *Work under `# Step 4` in `pick-the-right-container_STUDENT.py`.*
 
@@ -298,7 +298,7 @@ The error names a type. Add `for key in summary: print(key, type(summary[key]))`
 3. **Read it back into `reloaded`** with `json.load()` in a second `with open(...)` block. (`json.load()` from Day 8)
 4. **Open `tap_summary.json` in your editor** and read it. It is plain text.
 5. **Run the five given prints** and compare each type with the one you built on Day 2.
-   - **New: `.__name__`** on a type gives that type's name as text. `type([1, 2]).__name__` gives `list`.
+   - **New: `.__name__`** on a type gives that type's name as text. `type([1, 2]).__name__` gives `list`. It's written for you in Step 6 of your .py; you'll write it yourself next time.
 
 *Work under `# Step 6` in `pick-the-right-container_STUDENT.py`.*
 

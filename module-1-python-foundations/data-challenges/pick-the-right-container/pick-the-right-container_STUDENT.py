@@ -36,8 +36,9 @@ print("comparisons to find T999:", scan_for("T999", taps))
 
 
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
-# TODO: loop over `size` in [5, 10, 20, 40]
-# TODO: assign `worst` to scan_for("T999", taps[:size]); print size, worst
+for size in [5, 10, 20, 40]:
+    worst = scan_for("T999", taps[:size])
+    # TODO: print "rows:", `size`, "| worst-case comparisons:", `worst`
 # TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
 # TODO: add 1 to `pairs` in the inner loop
 # TODO: print len(taps) and `pairs`

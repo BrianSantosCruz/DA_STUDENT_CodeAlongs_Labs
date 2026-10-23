@@ -19,8 +19,8 @@ rows = [line for line in lines[1:] if line]
 
 def validate_request(row):
     # TODO: assign `fields` to `row` split on commas
-    # TODO: if len(fields) is not EXPECTED_FIELDS, return False and a reason
-    # TODO: make that reason "wrong field count: " plus str(len(fields))
+    if len(fields) != EXPECTED_FIELDS:
+        return False, "wrong field count: " + str(len(fields))
     # TODO: unpack `fields` into the five names in the CSV header
     # TODO: if `borough` is empty, return False and "borough is empty"
     # TODO: if `status` is not in ALLOWED_STATUS, return False and a reason

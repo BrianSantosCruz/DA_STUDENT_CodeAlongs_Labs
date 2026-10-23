@@ -149,11 +149,11 @@ The top of your .py already reads the file for you. `header` is the column-name 
 ### Step 1: Write `validate_request()` to Return a Verdict and a Reason
 
 1. **Make two constants:** `EXPECTED_FIELDS` set to 5, and `ALLOWED_STATUS`, a list of the three statuses the team allows. (`list` from Day 7)
-2. **Write one function, `validate_request(row)`,** that splits `row` on commas into `fields`. (`def` from Day 3; `.split()` from Day 1)
-3. **Check the field count first.** Return `False` and a reason when `len(fields)` is not `EXPECTED_FIELDS`. (`len()` from Day 2; `!=` from Day 9)
-   - **New: `return a, b`** hands back two values at once, as a tuple. If `pair()` ends with `return True, "ok"`, then `ok, reason = pair()` sets `ok` to `True` and `reason` to `"ok"`.
-   - **New: `str()`** turns a value into text so you can join it to other text. `"count: " + str(4)` gives `"count: 4"`.
-4. **Unpack the five fields into five names** that match the header: `request_id`, `complaint_type`, `borough`, `days_open`, `status`. Return `False` and a reason for an empty borough, or for a status not in `ALLOWED_STATUS`. (`not in` from Day 7)
+2. **Write one function, `validate_request(row)`,** that splits `row` on commas into `fields`. (`def` from Day 3; `.split()` from *Trace the Path*, Step 1)
+3. **Read the field-count check, given first.** It returns `False` and a reason when `len(fields)` is not `EXPECTED_FIELDS`. (`len()` from *Trace the Path*, Step 3; `!=` from Day 9)
+   - **New: `return a, b`** hands back two values at once, as a tuple. If `pair()` ends with `return True, "ok"`, then `ok, reason = pair()` sets `ok` to `True` and `reason` to `"ok"`. It's written for you in Step 1 of your .py; you'll write it yourself next time.
+   - **New: `str()`** turns a value into text so you can join it to other text. `"count: " + str(4)` gives `"count: 4"`. It's written for you in Step 1 of your .py; you'll write it yourself next time.
+4. **Unpack the five fields into five names** that match the header: `request_id`, `complaint_type`, `borough`, `days_open`, `status`. Return `False` and a reason for an empty borough, or for a status not in `ALLOWED_STATUS`. (`not in` from *Trace the Path*, Step 3)
 5. **Return `True` and `"ok"`** when every check passes.
 6. **Run the three test rows** at the bottom of the step before you point the validator at the whole file.
 
@@ -176,7 +176,7 @@ The top of your .py already reads the file for you. `header` is the column-name 
 1. **Hand-count the bad rows first.** Check each of the 15 rows for five fields, a borough, and an allowed status.
 2. **Write one loop over `rows`** that unpacks `validate_request(row)` into `ok` and `reason`. (`for` from Day 1; `return a, b` from Step 1)
 3. **Add 1 to `valid`** for every row that passes.
-4. **Print the request ID and the reason** for every row that fails. The ID is `row.split(",")[0]`. (`row[0]` from Day 1)
+4. **Print the request ID and the reason** for every row that fails. The ID is `row.split(",")[0]`. (`row[0]` from *Trace the Path*, Step 1)
 5. **Run it** and compare `valid` with your hand count.
 6. **Read every row that passed, one by one,** and ask whether any got through that should not have.
 
@@ -210,7 +210,7 @@ Be ready to answer **"why did you do it that way?"**
 
 *Expect this step to raise `ValueError`. That is the point, not a bug.*
 
-1. **Predict** how many report lines print before it crashes. Walk the rows your validator passes and find the first `days_open` that `int()` cannot convert. (`int()` from Day 1)
+1. **Predict** how many report lines print before it crashes. Walk the rows your validator passes and find the first `days_open` that `int()` cannot convert. (`int()` from *Trace the Path*, Step 1)
 2. **Set `total_days` and `counted` to 0,** then write one loop over `rows`.
 3. **Skip every row `validate_request()` rejects** with `continue`. (`continue` from Day 1)
 4. **Convert the fourth field, `days_open`, with `int()`.** Add it to `total_days`, add 1 to `counted`, and print the ID with the number.
@@ -241,7 +241,7 @@ If it runs to the end, print `row.split(",")[3]` for each surviving row and chec
 5. **Rebuild the loop** so `validate_request()` runs first, and `check_days_open()` runs only on rows that pass it.
 6. **Count every row:** add 1 to `counted` or to `skipped`, and print the ID and reason for each skip.
 7. **Run it** and check that `counted` plus `skipped` is 15.
-   - **New: `round()`** rounds a number to the number of decimal places you give it. `round(8.24, 1)` gives `8.2`.
+   - **New: `round()`** rounds a number to the number of decimal places you give it. `round(8.24, 1)` gives `8.2`. It's written for you in Step 4 of your .py; you'll write it yourself next time.
 
 *Work under `# Step 4` in `validate-catch-keep-going_STUDENT.py`.*
 

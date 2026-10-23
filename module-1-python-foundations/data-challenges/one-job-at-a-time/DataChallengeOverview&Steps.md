@@ -143,14 +143,14 @@ Step 1 gives you `read_donations(path)`, which reads the file. Call it with `DAT
 
 ### Step 1: Write the Read-and-Validate Pair, Each With a Docstring
 
-1. **Write a one-sentence docstring for `read_donations()`** that names its one job. Its body is given.
-   - **New: `docstring`** is a string in triple quotes on a function's first line that says what the function does. `def total(): """Add up the pounds."""` documents `total()`.
-   - **New: `.splitlines()`** splits text into a list of its lines. `"a\nb".splitlines()` gives `['a', 'b']`.
-   - **New: `.strip()`** removes spaces from both ends of a string. `" rice ".strip()` gives `"rice"`.
-2. **Write one function, `validate_donation(record)`,** with its own docstring, that returns a verdict and a reason. (`return a, b` from Day 9)
-3. **Check the field count before any check that reads a field.** On a short row, every later field slides over one place. (`len()` from Day 2)
+1. **Read `read_donations()`.** It is given in full. Its docstring, the first line in triple quotes, names its one job.
+   - **New: `docstring`** is a string in triple quotes on a function's first line that says what the function does. `def total(): """Add up the pounds."""` documents `total()`. It's written for you in Step 1 of your .py; you'll write it yourself next time.
+   - **New: `.splitlines()`** splits text into a list of its lines. `"a\nb".splitlines()` gives `['a', 'b']`. It's written for you in Step 1 of your .py; you'll write it yourself next time.
+   - **New: `.strip()`** removes spaces from both ends of a string. `" rice ".strip()` gives `"rice"`. It's written for you in Step 1 of your .py; you'll write it yourself next time.
+2. **Write one function, `validate_donation(record)`,** with its own docstring, that returns a verdict and a reason. (`docstring` from Step 1; `return a, b` from *Validate, Catch, Keep Going*, Step 1)
+3. **Check the field count before any check that reads a field.** On a short row, every later field slides over one place. (`len()` from *Trace the Path*, Step 3)
 4. **Reject a blank category, then a pounds value `float()` cannot convert,** catching it with `except ValueError`. (`float()` from Day 8; `try/except` from Day 10)
-5. **Write one loop over the records** that appends usable ones to `valid` and prints the ID and reason for each rejection. (`.append()` from Day 2)
+5. **Write one loop over the records** that appends usable ones to `valid` and prints the ID and reason for each rejection. (`.append()` from *Trace the Path*, Step 3)
 
 *Work under `# Step 1` in `one-job-at-a-time_STUDENT.py`.*
 
@@ -170,7 +170,7 @@ Move your field-count check to the bottom of the validator and run it again. Com
 
 1. **Write the docstring first:** one sentence naming the function's one job. If it needs "and" twice, it is two jobs.
 2. **Make one dict, `by_category`,** that maps each category to its donation count and pounds, inside one loop over `valid_records`. (`dict` from Day 7; `float()` from Day 8)
-3. **Create a category's entry the first time it shows up,** before you add into it. (`not in` from Day 7)
+3. **Create a category's entry the first time it shows up,** before you add into it. (`not in` from *Trace the Path*, Step 3)
 4. **Add each record's pounds to `total_pounds`** in the same loop. No second pass. (`+=` from Day 5)
 5. **Return one dict** with the record count, `total_pounds` and `by_category`.
 6. **Put no validation inside it.** `validate_donation()` already did that job.
@@ -204,12 +204,12 @@ Be ready to answer **"why did you do it that way?"**
 ### Step 3: Add `export_summary()` and `run_pipeline()`, Then Print Docstrings
 
 1. **Run `print(len)` and `print(len("abc"))`** in a scratch file and compare the two lines.
-   - **New: `passing a function`** means handing a function's name, without `()`, to another function that calls it later. If `apply(job, x)` returns `job(x)`, then `apply(len, "abc")` gives `3`.
+   - **New: `passing a function`** means handing a function's name, without `()`, to another function that calls it later. If `apply(job, x)` returns `job(x)`, then `apply(len, "abc")` gives `3`. It's written for you in Step 3 of your .py; you'll write it yourself next time.
 2. **Write `export_summary(summary, path)`** with a docstring. It writes the dict to `path` as JSON and does nothing else. (`json.dump()` from Day 8; `with open()` from Day 1)
 3. **Write `run_pipeline(in_path, out_path, summarize)`** with a docstring. It reads, keeps the valid records, and exports `summarize(kept)`.
 4. **Use the `summarize` parameter** to call the summarizer. Do not write its name inside `run_pipeline`.
-5. **Run the given roll-call loop.** It prints each function's name and the first line of its docstring. (`.__name__` from Day 8)
-   - **New: `.__doc__`** holds a function's docstring as text. If `total()` has the docstring `"Add up the pounds."`, then `total.__doc__` gives `'Add up the pounds.'`.
+5. **Run the given roll-call loop.** It prints each function's name and the first line of its docstring. (`.__name__` from *Pick the Right Container*, Step 6)
+   - **New: `.__doc__`** holds a function's docstring as text. If `total()` has the docstring `"Add up the pounds."`, then `total.__doc__` gives `'Add up the pounds.'`. It's written for you in Step 3 of your .py; you'll write it yourself next time.
 
 *Work under `# Step 3` in `one-job-at-a-time_STUDENT.py`.*
 
@@ -230,7 +230,7 @@ In a scratch file, write `def shout(word): return word.upper()` and `def apply(j
 1. **Write `summarize_by_day(valid_records)`** with its own docstring. Same input and output shape as `summarize_donations()`, but a `"by_day"` dict keyed by the date in `parts[4]` replaces `"by_category"`.
 2. **Call the same `run_pipeline()`,** handing it `summarize_by_day` instead. (`passing a function` from Step 3)
 3. **Read `donation_summary.json` back** with `json.load()`, inside a `with open()` block, rather than trusting the dict in memory. (`json.load()` from Day 8)
-4. **Run the given prints:** the totals, then one line per date in order. (`sorted()` from Day 7)
+4. **Run the given prints:** the totals, then one line per date in order. (`sorted()` from *Pick the Right Container*, Step 4)
 5. **Count how many of your other functions you had to edit** for the swap.
 
 *Work under `# Step 4` in `one-job-at-a-time_STUDENT.py`.*

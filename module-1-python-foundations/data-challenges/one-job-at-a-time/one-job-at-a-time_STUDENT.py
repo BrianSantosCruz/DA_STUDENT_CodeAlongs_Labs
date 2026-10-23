@@ -10,7 +10,7 @@ DATA_FILE = "pantry_donations.csv"  # edit the filepath with the data
 
 # Step 1: Write the Read-and-Validate Pair, Each With a Docstring
 def read_donations(path):
-    # TODO: replace this line with a one-sentence docstring
+    """Read the donation log into one raw string per record."""
     records = []
     with open(path) as f:
         for line in f.read().splitlines()[1:]:
