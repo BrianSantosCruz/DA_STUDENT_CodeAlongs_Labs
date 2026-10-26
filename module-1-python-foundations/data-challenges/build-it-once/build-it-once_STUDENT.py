@@ -122,20 +122,19 @@ print("swim only:  ", total_sessions(swim_only))
 # One of the two functions you just wrote gives you something back. The
 # other only puts something on the screen.
 
-#def count_long_bookings(records, minimum):
+def count_long_bookings(records, minimum):
     # TODO: count the records whose sessions number is `minimum` or more
     # TODO: return the count
-#    pass
-
-#def show_long_bookings(records, minimum):
+    pass
+def show_long_bookings(records, minimum):
     # TODO: print a sentence with the same count in it. Only print.
-#    pass
+    pass
 
-#print("returned:", count_long_bookings(signups, 4))
-#print("returned:", count_long_bookings(signups, 2))
+print("returned:", count_long_bookings(signups, 4))
+print("returned:", count_long_bookings(signups, 2))
 
-#handed_back = show_long_bookings(signups, 4)
-#print("what show_long_bookings handed back:", handed_back)
+handed_back = show_long_bookings(signups, 4)
+print("what show_long_bookings handed back:", handed_back)
 
 # Your answer:
 #
