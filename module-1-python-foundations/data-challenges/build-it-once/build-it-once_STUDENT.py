@@ -236,9 +236,9 @@ print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 # the steps after it can run.
 
 def log_signup(record, previous_member):
-member = x.split(",")[0]
-print("Previous:", previous_member, "| Current:", member)
-return member
+    member = x.split(",")[0]
+    print("Previous:", previous_member, "| Current:", member)
+    return member
 
 last_member = "nobody yet"
 last_member = log_signup(signups[0], last_member)
@@ -247,7 +247,7 @@ last_member = log_signup(signups[1], last_member)
 last_seen = "nobody yet"
 
 def log_signup_broken(record):
-    print("previous:", last_seen)
+#    print("previous:", last_seen)
     last_seen = x.split(",")[0]
     return last_seen
 
@@ -301,12 +301,34 @@ log_signup_broken(signups[2])
 # Three function names. Everything else is yours.
 
 def sessions_in(record):
+    session = x.split(",")[2]
+    return int(session)
 
+print("Sessions number:",sessions_in("Nia, Yoga, 4"))
+print("Sessions number:",sessions_in("Tess, Yoga, 5"))
 
 def signups_for(records, member):
+    member_list = []
+    for x in records:
+        if x.split(",")[0] == member:
+            member_list.append(x)
+    return member_list
+
+print(signups_for(signups, "Nia"))
 
 
 def total_for(records, member):
+    count = 0
+    for x in signups_for(records, member):
+        count += sessions_in(x)
+        return count
+
+
+print("Total nunmber of sessions for Nia:", total_for(signups, "Nia"))
+print("Total nunmber of sessions for Omar:", total_for(signups, "Omar"))
+print("Total nunmber of sessions for Tes:", total_for(signups, "Tes"))
+print("Total nunmber of sessions for Rafi:", total_for(signups, "Rafi"))
+print("Total nunmber of sessions for Gwen:", total_for(signups, "Gwen"))
 
 
 # ===== Step 6: Run total_for() on Five Inputs Nobody Asked For, Then Judge Each Answer =====
