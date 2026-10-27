@@ -40,7 +40,7 @@ print("comparisons to find T999:", scan_for("T999", taps))
 # Step 1, answer 1:
 # T001 should display with a 1, as it appears once. Both T040 and T999 should appear with a 40 because the maximum rows of data is 40, it cannot go higher if there is not more data.
 # Step 1, answer 2:
-# 
+# You should plan around 40, because this is the total amount of rows of data that there are, encapsulating the csv file's content.
 
 
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
@@ -50,8 +50,9 @@ for size in [5, 10, 20, 40]:
     print("rows:", size, "| worst-case comparisons:", worst)
 pairs = 0
 for x in taps:
-    pairs += 1
-    print(len(taps), pairs) 
+    for tap in taps:
+        pairs += 1
+print(len(taps), pairs) 
 big = len(taps) * 10
 print("worst case:", big, "pair loop:", big * big)
 
@@ -63,9 +64,9 @@ print("worst case:", big, "pair loop:", big * big)
 # TODO: print the scan's worst case and the pair loop's count on `big` rows
 
 # Step 2, answer 1:
-#
+# I expect there to be a count of 40, 1600 (400 worst case and 160000 pair loop). 40 x 40 = 1600, 400 x 400 = 160000
 # Step 2, answer 2:
-#
+# The scan goes through every row and counts it one by one. As it increases, so does the pair loop, multiplied.
 
 
 # ===== Day 2 =====
