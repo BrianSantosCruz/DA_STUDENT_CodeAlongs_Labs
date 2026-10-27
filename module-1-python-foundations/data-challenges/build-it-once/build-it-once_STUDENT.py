@@ -354,11 +354,30 @@ print("Total nunmber of sessions for Gwen:", total_for(signups, "Gwen"))
 # No new functions. Call the ones you already have, on inputs nobody
 # asked for, and write a verdict beside each printed result.
 
+empty_list = total_for([], "Nia")
+print("1. Empty list total:", empty_list)
+one_record = total_for(["Nia, Yoga, 4"], "Nia")
+print("2. One record total:", one_record)
+not_in_file = total_for(signups, "Brian")
+print("3. Not in file:", not_in_file)
+typo_member = total_for(signups, "nia")
+print("4. Typo member:", typo_member)
+empty_signup = signups_for([], "Nia")
+print("5. Empty signups:", empty_signup)
+unknown_member = total_for(signups, "Jorge")
 
+members_sum = (
+    total_for(signups, "Nia") +
+    total_for(signups, "Omar") +
+    total_for(signups, "Tess") +
+    total_for(signups, "Rafi") +
+    total_for(signups, "Gwen")
+)
 
+grand_total = total_sessions(signups)
+print("6. Members Sum vs Grand Total:", members_sum, "vs", grand_total)
 # ----- Share Out: Day 3 -----
 # Last 15 minutes, back together as a class. Bring:
-#
 # - Your verdict on one edge case. Pick the strangest result. Say whether
 #   the answer is right or just quiet, and what you would change if this
 #   were the center's real data. If you and your partner disagreed, bring
@@ -374,5 +393,4 @@ print("Total nunmber of sessions for Gwen:", total_for(signups, "Gwen"))
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
-#
+# I wish I could have spent more time understanding the concept of the cutoff in relation to the context of the lab.
