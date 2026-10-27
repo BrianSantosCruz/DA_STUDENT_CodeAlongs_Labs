@@ -108,6 +108,9 @@ print("swim only:  ", total_sessions(swim_only))
 #
 # 1. Predict both returned: counts in a comment, reading the third field
 #    down the file: once for 4 or more, once for 2 or more.
+
+# 7 and 11 both returned.
+
 # 2. Write count_long_bookings(records, minimum) so it counts the records
 #    whose sessions number is minimum or more, and returns that count.
 # 3. Write show_long_bookings(records, minimum) so it prints a sentence with
@@ -123,12 +126,15 @@ print("swim only:  ", total_sessions(swim_only))
 # other only puts something on the screen.
 
 def count_long_bookings(records, minimum):
-    # TODO: count the records whose sessions number is `minimum` or more
-    # TODO: return the count
-    pass
+    count = 0
+    for x in records:
+        member, class_name, session = x.split(",")
+        if int(session) >= minimum:
+            count = count + 1
+    return count
+
 def show_long_bookings(records, minimum):
-    # TODO: print a sentence with the same count in it. Only print.
-    pass
+    the_total = count_long_bookings(records, minimum)
 
 print("returned:", count_long_bookings(signups, 4))
 print("returned:", count_long_bookings(signups, 2))
@@ -137,8 +143,8 @@ handed_back = show_long_bookings(signups, 4)
 print("what show_long_bookings handed back:", handed_back)
 
 # Your answer:
-#
-#
+# The parameters are the minimum.
+# The arguments are 4 and 2.
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -156,8 +162,8 @@ print("what show_long_bookings handed back:", handed_back)
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
-#
+# My two totals are: whole file is 45 classes, and swim classes is 15.
+# The parameters are the minimum. 4 and 2 are the arguments.
 
 ############################################################################
 #  DAY 2
