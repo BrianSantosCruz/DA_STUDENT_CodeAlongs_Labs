@@ -38,12 +38,13 @@ print("comparisons to find T040:", scan_for("T040", taps))
 print("comparisons to find T999:", scan_for("T999", taps))
 
 # Step 1, answer 1:
-#
+# T001 should display with a 1, as it appears once. Both T040 and T999 should appear with a 40 because the maximum rows of data is 40, it cannot go higher if there is not more data.
 # Step 1, answer 2:
-#
+# 
 
 
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
+
 for size in [5, 10, 20, 40]:
     worst = scan_for("T999", taps[:size])
     print("rows:", size, "| worst-case comparisons:", worst)
