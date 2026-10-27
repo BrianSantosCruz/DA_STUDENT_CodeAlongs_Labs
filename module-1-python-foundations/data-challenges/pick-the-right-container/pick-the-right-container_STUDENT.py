@@ -29,8 +29,6 @@ def scan_for(tap_id, records):
     # TODO: inside the loop, return `comparisons` when row[0] == tap_id
     # TODO: after the loop, return `comparisons`
 
-
-
 print("columns:", header)
 print("rows in the log:", len(taps))
 print("comparisons to find T001:", scan_for("T001", taps))
