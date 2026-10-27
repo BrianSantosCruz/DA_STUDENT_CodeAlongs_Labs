@@ -109,7 +109,7 @@ print("swim only:  ", total_sessions(swim_only))
 # 1. Predict both returned: counts in a comment, reading the third field
 #    down the file: once for 4 or more, once for 2 or more.
 
-# 7 and 11 both returned.
+# 7 and 11 would both return.
 
 # 2. Write count_long_bookings(records, minimum) so it counts the records
 #    whose sessions number is minimum or more, and returns that count.
@@ -178,6 +178,9 @@ print("what show_long_bookings handed back:", handed_back)
 #    Day 1's second step. All you are predicting here is which of those two
 #    numbers each of the two identical-looking calls prints. Write both in a
 #    comment, and write why.
+
+# Both would produce a count 
+
 # 2. Write count_reaching_outside(records) so it counts the same thing
 #    count_long_bookings does, but takes no minimum parameter. It reads
 #    sessions_cutoff from outside the function instead.
@@ -189,19 +192,22 @@ print("what show_long_bookings handed back:", handed_back)
 # Both versions run clean. Decide which of the two you would trust in a file
 # you did not write, and say what in the call line told you.
 
-#sessions_cutoff = 4
+sessions_cutoff = 4
 
-#def count_reaching_outside(records):
-    # TODO: same count as count_long_bookings, but take NO minimum
-    # parameter. Read sessions_cutoff from outside the function instead.
-#    pass
+def count_reaching_outside(records):
+    count = 0
+    if x in records:
+        member, class_name, session = x.split(",")
+        if int(session) >= sessions_cutoff:
+            count = count + 1
+        return count
 
-#print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
 
-#sessions_cutoff = 2
+sessions_cutoff = 2
 
-# TODO: call count_reaching_outside(signups) again, unchanged, and print it
-# TODO: print count_long_bookings(signups, 4) underneath for comparison
+print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 
 # ===== Step 4: Pass the Last Member In and Out, Then Trigger an UnboundLocalError =====
 # The coordinator wants each sign-up printed next to the one before it. The
