@@ -178,9 +178,6 @@ print("what show_long_bookings handed back:", handed_back)
 #    Day 1's second step. All you are predicting here is which of those two
 #    numbers each of the two identical-looking calls prints. Write both in a
 #    comment, and write why.
-
-# Both would produce a count 
-
 # 2. Write count_reaching_outside(records) so it counts the same thing
 #    count_long_bookings does, but takes no minimum parameter. It reads
 #    sessions_cutoff from outside the function instead.
@@ -224,6 +221,9 @@ print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 #    reading and then updating last_seen, a name defined above the function.
 # 4. Predict in a comment whether its print line will work. The step above
 #    showed a function reading an outside name just fine.
+
+# It should potentially work if the previous function did.
+
 # 5. Run the file, read the traceback, and write down the exception name,
 #    the variable and the line it points at, in your own words, before you
 #    look anything up.
