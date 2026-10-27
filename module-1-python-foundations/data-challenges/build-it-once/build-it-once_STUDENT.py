@@ -235,28 +235,26 @@ print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
 
-#def log_signup(record, previous_member):
-    # TODO: pull the member name out of `record`
-    # TODO: print the previous member and this one on one line
-    # TODO: return this member's name
-#    pass
+def log_signup(record, previous_member):
+member = x.split(",")[0]
+print("Previous:", previous_member, "| Current:", member)
+return member
 
-#last_member = "nobody yet"
-# TODO: call log_signup on signups[0], then on signups[1], storing
-# what it returns back into last_member each time
+last_member = "nobody yet"
+last_member = log_signup(signups[0], last_member)
+last_member = log_signup(signups[1], last_member)
 
-#last_seen = "nobody yet"
+last_seen = "nobody yet"
 
-#def log_signup_broken(record):
-    # Leave this body exactly as written. It is supposed to raise.
-#    print("previous:", last_seen)
-#    last_seen = record.split(",")[0]
-#    return last_seen
+def log_signup_broken(record):
+    print("previous:", last_seen)
+    last_seen = x.split(",")[0]
+    return last_seen
 
-#log_signup_broken(signups[2])
+log_signup_broken(signups[2])
 
 # Your answer:
-#
+# UnboundLocalError: cannot access local variable 'last_seen' where it is not associated with a value
 #
 
 # ----- Share Out: Day 2 -----
@@ -274,7 +272,7 @@ print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
+# The error message says that the 'last_seen' caused an error because it is not associated with a value.
 #
 
 ############################################################################
@@ -302,17 +300,14 @@ print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 
 # Three function names. Everything else is yours.
 
-#def sessions_in(record):
-#    pass
+def sessions_in(record):
 
-#def signups_for(records, member):
-#    pass
 
-#def total_for(records, member):
-    # This one should get its work done by calling the other two.
-#    pass
+def signups_for(records, member):
 
-# TODO: print a line per member
+
+def total_for(records, member):
+
 
 # ===== Step 6: Run total_for() on Five Inputs Nobody Asked For, Then Judge Each Answer =====
 # No new functions. Call the ones you already have on inputs nobody asked
@@ -337,11 +332,7 @@ print("compared to long bookings (min. 4):", count_long_bookings(signups,4))
 # No new functions. Call the ones you already have, on inputs nobody
 # asked for, and write a verdict beside each printed result.
 
-# TODO: an empty list
-# TODO: a list holding exactly one record
-# TODO: a member name that is not in the file at all
-# TODO: a name that differs from a real member's only by capitalization
-# TODO: then: do the per-member totals add up to the whole-file total?
+
 
 # ----- Share Out: Day 3 -----
 # Last 15 minutes, back together as a class. Bring:
