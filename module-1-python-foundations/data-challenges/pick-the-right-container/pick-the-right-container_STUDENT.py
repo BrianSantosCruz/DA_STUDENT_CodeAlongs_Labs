@@ -100,9 +100,9 @@ print("comparisons the two parallel lists needed:", comparisons)
 print("busiest card:", card_ids[busiest], "with", max(tap_counts), "taps")
 
 # Step 3, answer 1:
-# 
+# It has to be less than 480 (40 rows x 12) due the potential aspect of there being repeats
 # Step 3, answer 2:
-# 
+# I got an output of 190, and it is bigger than the number of rows because there are 40 rows - but some don't count.
 
 
 # Step 4: Count Taps Per Card With a Dictionary, and Stations With a Set
@@ -118,10 +118,10 @@ lookups = 0
 for row in taps:
     lookups += 1
     card_id = row[1]
-    if card_id in taps_by_card:
-        taps_by_card[card_id] += 1
+    if row[1] in taps_by_card:
+        taps_by_card[row[1]] += 1
     else:
-        taps_by_card[card_id] = 1
+        taps_by_card[row[1]] = 1
 
 stations = set()
 for row in taps:
@@ -129,8 +129,8 @@ for row in taps:
 
 repeat_riders = 0
 
-for count in taps_by_card.values():
-    if count > 1:
+for row in taps_by_card.values():
+    if row > 1:
         repeat_riders += 1
 
 print("distinct cards:", len(taps_by_card))
@@ -140,13 +140,13 @@ print("cards that tapped more than once:", repeat_riders)
 print("taps for C001:", taps_by_card["C001"])
 
 # Step 4, answer 1:
-#
+# A dict has to look at each row. Since there are 40 rows, I predict that 40 will be the output.
 # Step 4, answer 2:
-#
+# As the Input Size grows, parallel lists depend on the amount of unique cards. As the Input Size grows, so will the dict with each lookup.
 # Step 4, answer 3:
-#
+# Parallel lists pair a card with its count, and it goes through the list until it finds what it looks for. Sets show the amount of stations there are without duplicates. Dict uses key identification to match cards with count.
 # Step 4, answer 4:
-#
+# The card that is only tapped once, which is C012.
 
 
 # ===== Day 3 =====
