@@ -153,41 +153,45 @@ print("taps for C001:", taps_by_card["C001"])
 
 # Step 5: Save the Summary as JSON and Read the TypeError a Set Causes
 # TODO: replace each None with your Day 2 value; keep `stations` a set
-#summary = {
-#    "service_day": "2026-03-02",
-#    "total_taps": None,
-#    "distinct_cards": None,
-#    "stations": None,
-#    "taps_by_card": None,
-#}
+summary = {
+    "service_day": "2026-03-02",
+    "total_taps": len(taps),
+    "distinct_cards": len(taps_by_card),
+    "stations": stations,
+    "taps_by_card": taps_by_card,
+}
 
-#print("about to serialize", len(summary), "keys")
+print("about to serialize", len(summary), "keys")
 # TODO: run the file and answer below before you change anything
 # TODO: then put # in front of the next two lines so Step 6 can run
-#text = json.dumps(summary, indent=2)
-#print(text)
+text = json.dumps(summary, indent=2)
+print(text)
 
 # Step 5, answer 1:
-#
+# TypeError: Object of type set is not JSON serializable
 # Step 5, answer 2:
-#
+# What caused the TypeError was the set because JSON files don't support set.
 # Step 5, answer 3:
-#
+# Yes it did, and this tells me that the dict was working, the issue falls onto the set that isn't supported by the JSON file.
 
 
 # Step 6: Write `tap_summary.json`, Reload It, and Check Which Types Survived
 # TODO: assign summary["stations"] to a type JSON can hold; keep the key
 # TODO: json.dump() `summary` into a with open("tap_summary.json", "w")
 # TODO: replace None with json.load() of "tap_summary.json"
-#reloaded = None
+summary["stations"] = sorted(stations)
+with open("tap_summary.json", "w") as f:
+    json.dump(summary, f)
+with open("tap_summary.json", "r") as f:
+    reloaded = json.load(f)
 
-#print("total_taps came back as:", reloaded["total_taps"])
-#print("taps_by_card came back as a", type(reloaded["taps_by_card"]).__name__)
-#print("C001 straight out of the file:", reloaded["taps_by_card"]["C001"])
-#print("stations came back as a", type(reloaded["stations"]).__name__)
-#print("round trip identical:", reloaded["taps_by_card"] == taps_by_card)
+print("total_taps came back as:", reloaded["total_taps"])
+print("taps_by_card came back as a", type(reloaded["taps_by_card"]).__name__)
+print("C001 straight out of the file:", reloaded["taps_by_card"]["C001"])
+print("stations came back as a", type(reloaded["stations"]).__name__)
+print("round trip identical:", reloaded["taps_by_card"] == taps_by_card)
 
 # Step 6, answer 1:
-#
+# Yes they can, and this is because we were able to get outputs on the total amount of taps a card has previously (C001 had 6).
 # Step 6, answer 2:
-#
+# 'taps_by_card' survived the round trip, while stations changed from a set (didn't work) to a list.
