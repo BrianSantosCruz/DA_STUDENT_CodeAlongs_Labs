@@ -118,8 +118,8 @@ print("counted:", counted, "| skipped:", skipped)
 print("average days open:", round(total_days / counted, 1))
 
 # Step 4, answer 1:
-# It should now skip 5 rows
+# It should now skip 5 rows - SR-1007 and SR-1013 were not counted in Day 1.
 # Step 4, answer 2:
-#
+# The if caught the -3 and the try caught the 3 days. The tools could not have caught the other one's value, because the if was meant to catch values under 0, whilst the try was meant to find a value that didn't belong (for example, the string).
 # Step 4, answer 3:
-#
+# Counted and skipped account for every row. There are 15 rows in the csv file, and 'counted' got 10 rows, whilst 'skipped' got 5. 10 + 5 = 15.
