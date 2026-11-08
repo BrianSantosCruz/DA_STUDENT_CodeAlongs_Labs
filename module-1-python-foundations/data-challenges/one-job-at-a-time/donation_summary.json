@@ -1,0 +1,26 @@
+{
+  "records": 17,
+  "total_pounds": 300.0,
+  "by_category": {
+    "grains": {
+      "donations": 4,
+      "pounds": 80.0
+    },
+    "canned": {
+      "donations": 4,
+      "pounds": 80.0
+    },
+    "produce": {
+      "donations": 5,
+      "pounds": 105.0
+    },
+    "dairy": {
+      "donations": 2,
+      "pounds": 20.0
+    },
+    "protein": {
+      "donations": 2,
+      "pounds": 15.0
+    }
+  }
+}
