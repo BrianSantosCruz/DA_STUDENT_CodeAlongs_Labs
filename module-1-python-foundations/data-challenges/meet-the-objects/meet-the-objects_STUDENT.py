@@ -15,13 +15,21 @@ with open(DATA_FILE) as f:
 # TODO: assign `names` and `bikes` to two empty lists
 # TODO: loop over `stations`; append each one's "name" to `names`
 # TODO: append the same station's "bikes_available" to `bikes`
+names = []
+bikes = []
+for station in stations:
+    names.append(station["name"])
+    bikes.append(station["bikes_available"])
+
 names.pop(2)
 
 print("stations in the file:", len(stations))
 # TODO: loop over range(len(names)); print names[i], "|", bikes[i], "bikes"
+for i in range(len(names)):
+    print(names[i], "|", bikes[i], "bikes")
 
 # Step 1, answer 1:
-#
+# 
 # Step 1, answer 2:
 #
 # Step 1, answer 3:
@@ -56,8 +64,8 @@ class Station:
 # ===== Day 2 =====
 
 # Step 3: Add `__str__` and Find Out Which of Four Prints It Changes
-print(fleet[0])
-print(fleet[:2])
+#print(fleet[0])
+#print(fleet[:2])
 
 
 # TODO: copy your Station class from Step 2 here
@@ -65,8 +73,8 @@ print(fleet[:2])
 # TODO: build it from self.name, self.bikes_available and self.capacity
 # TODO: rebuild `fleet` from this class with the same loop as Step 2
 
-print(fleet[0])
-print(fleet[:2])
+#print(fleet[0])
+#print(fleet[:2])
 
 # Step 3, answer 1:
 #
@@ -81,9 +89,9 @@ print(fleet[:2])
 # TODO: assign `van_list` to []; loop over `fleet`
 # TODO: append each station whose needs_restock() returns True to `van_list`
 
-print(van_list)
-for station in van_list:
-    print(station)
+#print(van_list)
+#for station in van_list:
+#    print(station)
 
 # Step 4, answer 1:
 #
