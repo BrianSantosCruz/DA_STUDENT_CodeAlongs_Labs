@@ -30,9 +30,18 @@ print('----- 1. Step 1: __init__ and Attributes -----')
 # players_available, category) that stores all three as
 # self.title, self.players_available, self.category
 
+class BoardGame:
+    def __init__(self, title, players_available, category):
+        self.title = title
+        self.players_available = players_available
+        self.category = category
 
 # TODO: create connect4 = BoardGame("Connect Four", 4, "Strategy")
 # TODO: print connect4.title, then print connect4.players_available
+
+connect4 = BoardGame("Connect Four", 4, "Strategy")
+print(connect4.title)
+print(connect4.players_available)
 
 # DISCUSS: Why does connect4.players_available hold 4 and not "Connect Four" in
 #          the Step 1 code? Talk it over with your partner.
@@ -48,10 +57,17 @@ print('----- 2. Step 2: Add a Method -----')
 # TODO: keep Step 1's __init__
 # TODO: add a method is_low_stock(self) that returns
 # self.players_available < 3
-
+class BoardGame:
+    def __init__(self, title, players_available, category):
+        self.title = title
+        self.players_available = players_available
+        self.category = category
+        def is_low_stock(self):
+            return self.players_available < 3
 
 # TODO: create connect4 again, then print connect4.is_low_stock()
-
+connect4 = BoardGame("Connect Four", 4, "Strategy")
+print(connect4.is_low_stock())
 # PREDICT before you run: Which change makes connect4.is_low_stock() return
 #                         True: the player count set to 2, the category set to
 #                         "Party", or the title set to "Uno"? Agree on one with
@@ -68,7 +84,10 @@ print('----- 2. Step 2: Add a Method -----')
 print('----- 3. Step 3: Prove Independent Storage -----')
 # TODO: create connect4 = BoardGame("Connect Four", 4, "Strategy")
 # TODO: create uno = BoardGame("Uno", 8, "Party")
-
+connect4 = BoardGame("Connect Four", 4, "Strategy")
+uno = BoardGame("Uno", 8, "Party")
+connect4.players_available = 1
+print(connect4.is_low_stock)
 
 # TODO: set connect4.players_available = 1
 # TODO: print connect4.is_low_stock(), then print uno.is_low_stock()
