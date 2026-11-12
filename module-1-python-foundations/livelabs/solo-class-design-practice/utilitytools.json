@@ -1,0 +1,52 @@
+[
+  {
+    "tool_name": "Screwdriver Set",
+    "stock_available": "9",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Claw Hammer",
+    "stock_available": "4",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Adjustable Wrench",
+    "stock_available": "11",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Pliers Set",
+    "stock_available": "12",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Utility Knife",
+    "stock_available": "16",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Headlamp",
+    "stock_available": "10",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Staple Gun",
+    "stock_available": "12",
+    "safety_check": true
+  },
+    {
+    "tool_name": "Hacksaw",
+    "stock_available": "4",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Rubber Mallet",
+    "stock_available": "6",
+    "safety_check": true
+  },
+  {
+    "tool_name": "Step Ladder",
+    "stock_available": "3",
+    "safety_check": true
+  }
+]
