@@ -74,13 +74,13 @@ busy.bikes_available = 0
 
 
 # Step 2, answer 1:
-#
+# [self.name ("station names"), self.station_id ("bikes identification numbers"), self.capacity ("station capacity to hold bikes"), self.bike_available ("bikes available in each station"), self.needs_maintenance("stations that need help")]
 # Step 2, answer 2:
-#
+# "station_id" and "name" did not match the original data file. We decided to change it.
 # Step 2, answer 3:
-#
+# The dispatcher does not need "station_id" because it is not an important factor in what they said, which is directing vans and mechanics to station names, all which do not require to know station_id.
 # Step 2, answer 4:
-#
+# Both Flatbush Ave and Cooper Square printed false. However, when Flatbush Ave's count was put to 0, it switched to True, whilst Cooper Square still printed False. Both do not follow each other's outputs.
 
 
 # ===== Day 2 =====
@@ -97,7 +97,7 @@ print(fleet[:2])
 
 class Station:
     def __init__(self, name, capacity, bikes_available, station_id, needs_maintenance):
-        self.name = name
+        self.name = name-
         self.capacity = int(capacity)
         self.bikes_available = int(bikes_available)
         self.station_id = station_id
@@ -139,9 +139,9 @@ print(fleet[0])
 print(fleet[:2])
 
 # Step 3, answer 1:
-#
+# I expect the first two to be memory addresses, and the last two two be readable text.
 # Step 3, answer 2:
-#
+# My prediction for four is wrong because the list uses __repr__ instead - displaying the memory address.
 
 
 # Step 4: Add `__repr__` and Print the Van List for You and the Dispatcher
