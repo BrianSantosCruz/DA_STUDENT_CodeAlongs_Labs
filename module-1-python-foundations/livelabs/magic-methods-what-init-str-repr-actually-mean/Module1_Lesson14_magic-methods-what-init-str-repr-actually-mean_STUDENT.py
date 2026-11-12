@@ -45,7 +45,19 @@ print('----- 2. Step 1: Add __str__ -----')
 # TODO: keep __init__ from before
 # TODO: add __str__(self) that returns
 # f"{self.title}, {self.players_available} left"
+class BoardGame:
+    def __init__(self, title, players_available,
+                 category):
+        self.title = title
+        self.players_available = players_available
+        self.category = category
+    def __str__(self):
+        return f"{self.title}, {self.players_available} left"
+    def __repr__(self):
+        return f"{self.title}, {self.players_available} left"
 
+connect4 = BoardGame("Connect Four", 4, "Strategy")
+print(connect4)
 
 # TODO: create connect4 again, then print(connect4)
 
