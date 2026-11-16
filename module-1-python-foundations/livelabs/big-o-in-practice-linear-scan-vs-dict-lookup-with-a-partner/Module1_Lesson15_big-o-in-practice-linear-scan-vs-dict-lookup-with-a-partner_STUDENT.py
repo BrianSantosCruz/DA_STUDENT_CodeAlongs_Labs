@@ -34,11 +34,16 @@ class SupplyItem:
         self.department = department
 
 
-supplies = ["lechuga", "cebolla", "hueso", "semilla"]
+
 
 # TODO: create a list called supplies with 4 SupplyItem objects
 # of your own choosing
-
+supplies = [
+    SupplyItem("Lechuga",12, "Vegetable"),
+    SupplyItem("Jitomate",53, "Vegetable"),
+    SupplyItem("Manzana", 10, "Fruit"),
+    SupplyItem("Tortuga", 45, "Animal")
+]
 
 # ===== 2. Search 1: Linear Scan =====
 # Write a function that checks each item one at a time until it finds the one
@@ -47,7 +52,14 @@ print('----- 2. Search 1: Linear Scan -----')
 # TODO: define find_by_name_linear(supplies, name) that loops over
 # supplies and returns the item whose .name matches, or None if
 # nothing matches
+def find_by_name_linear(supplies, name):
+    for item in supplies:
+        if item.name == name:
+            return item
+        return None
 
+found = find_by_name_linear(supplies, "Tortuga")
+print(found.name, found.count)
 
 # TODO: call it looking for "Tape", then print the result's name
 # and count
@@ -66,7 +78,9 @@ print('----- 2. Search 1: Linear Scan -----')
 print('----- 3. Search 2: Dict-Keyed Lookup -----')
 # TODO: build supplies_by_name as a dict comprehension keyed by
 # each item's .name, valued as the item itself
-
+supplies_by_name = {item.name: item for item in supplies}
+found = supplies_by_name.get("Tortuga")
+print(found.name, found.count)
 
 # TODO: look up "Tape" with .get(), then print its name and count
 
