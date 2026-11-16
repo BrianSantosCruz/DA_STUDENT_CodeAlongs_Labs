@@ -27,7 +27,14 @@ fill it in before you run the file again.
 print('----- 1. Setup: A Class and Its Objects -----')
 # TODO: define SupplyItem with __init__ storing name, count,
 # department
+class SupplyItem:
+    def __init__(self, name, count, department):
+        self.name = name
+        self.count = count
+        self.department = department
 
+
+supplies = ["lechuga", "cebolla", "hueso", "semilla"]
 
 # TODO: create a list called supplies with 4 SupplyItem objects
 # of your own choosing
