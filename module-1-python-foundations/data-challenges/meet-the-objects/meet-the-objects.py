@@ -29,20 +29,22 @@ for i in range(len(names)):
     print(names[i], "|", bikes[i], "bikes")
 
 # Step 1, answer 1:
-# One record contains station_id (text), name (text), capacity, bikes_available (integers), and needs_maintenance (boolean). Separate parallel lists for names and counts can cause them to be easily desynchronized if tampered with.
+# One record contains station_id (text), name (text), capacity, bikes_available (integers), and needs_maintenance (boolean).
+# Separate parallel lists for names and counts can cause them to be easily desynchronized if tampered with.
 # Step 1, answer 2:
-# .pop(2) removes the element at index 2 from "names". It hands back the string. It shifts the following elements in "names" one position to the left.
+# .pop(2) removes the element at index 2 from "names". It hands back the string.
+# It shifts the following elements in "names" one position to the left.
 # Step 1, answer 3:
-# Every station since index 2 gets a bike count that was never theirs (the one after each). "W 52  St & 11 Ave" has a real count that nobody sees.
+# Every station since index 2 gets a bike count that was never theirs (the one after each).
+# "W 52  St & 11 Ave" has a real count that nobody sees.
 
 
 # Step 2: Define the Station Class and Prove Two Instances Are Independent
 class Station:
-    def __init__(self, name, capacity, bikes_available, station_id, needs_maintenance):
+    def __init__(self, name, capacity, bikes_available, needs_maintenance):
         self.name = name
         self.capacity = int(capacity)
-        self.bikes_available = int(bikes_available)
-        self.station_id = station_id
+        self.bikes_available = bikes_available
         self.needs_maintenance = needs_maintenance
 
     # TODO: add __init__ with name (str), capacity and bikes_available (int)
@@ -64,7 +66,7 @@ class Station:
 
 fleet = []
 for s in stations:
-    fleet.append(Station(s["name"], s["capacity"], s["bikes_available"], s["station_id"], s["needs_maintenance"]))
+    fleet.append(Station(s["name"], s["capacity"], s["bikes_available"], s["needs_maintenance"]))
 busy = fleet[1]
 quiet = fleet[-1]
 print(busy.needs_restock(), quiet.needs_restock())
@@ -75,13 +77,16 @@ print(busy.needs_restock(), quiet.needs_restock())
 
 
 # Step 2, answer 1:
-# [self.name ("station names"), self.station_id ("station identification numbers"), self.capacity ("station capacity to hold bikes"), self.bikes_available ("bikes available in each station"), self.needs_maintenance("stations that need help")]
+# [self.name ("station names"), self.station_id ("station identification numbers"), self.capacity ("station capacity to hold bikes"), 
+# self.bikes_available ("bikes available in each station"), self.needs_maintenance("stations that need help")]
 # Step 2, answer 2:
 # "station_id" and "name" did not match the original data file. We decided to change it.
 # Step 2, answer 3:
-# The dispatcher does not need "station_id" because it is not an important factor in what they said, which is directing vans and mechanics to station names, all which do not require to know station_id.
+# The dispatcher does not need "station_id" because it is not an important factor in what they said, which is directing vans and
+# mechanics to station names, all which do not require to know station_id.
 # Step 2, answer 4:
-# Both Flatbush Ave and Cooper Square printed false. However, when Flatbush Ave's count was put to 0, it switched to True, whilst Cooper Square still printed False. Both do not follow each other's outputs.
+# Both Flatbush Ave and Amsterdam Ave printed false. However, when Flatbush Ave's count was put to 0, it switched to True,
+# whilst Amsterdam Ave still printed False. Both do not follow each other's outputs.
 
 
 # ===== Day 2 =====
@@ -192,4 +197,5 @@ for station in van_list:
 # Step 4, answer 2:
 # __str__ provides readable text for regular users, whilst __repr__ provides exact strings for programmers.
 # Step 4, answer 3:
-# I would hand the dispatcher the __str__ format because they could easily read and understand the data that is being provided. If I used __repr__, they'd most likely be confused.
+# I would hand the dispatcher the __str__ format because they could easily read and understand the data that is being provided.
+# If I used __repr__, they'd most likely be confused.
