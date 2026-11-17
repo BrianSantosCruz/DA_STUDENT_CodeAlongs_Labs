@@ -198,4 +198,4 @@ for station in van_list:
 # __str__ provides readable text for regular users, whilst __repr__ provides exact strings for programmers.
 # Step 4, answer 3:
 # I would hand the dispatcher the __str__ format because they could easily read and understand the data that is being provided.
-# If I used __repr__, they'd most likely be confused.
+# If I used __repr__, they would most likely be confused.
