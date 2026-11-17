@@ -31,7 +31,14 @@ SUBMIT
 # ===== Step 1: Generate Batches of Your Own Day 15 Class at Three Sizes (10, 1,000, and 100,000) =====
 # Use your own class from Day 15's lab - your batch should be full of YOUR
 # objects, not a shared template's.
+class LibraryTool:
+    def __init__(self, tool_name, quantity_available, requires_inspection):
+        self.tool_name = tool_name
+        self.quantity_available = quantity_available
+        self.requires_inspection = requires_inspection
 
+    def is_available(self):
+        return self.quantity_available > 0
 # TODO: Generate Batches of Your Own Day 15 Class at Three Sizes (10, 1,000, and 100,000)
 
 # ===== Step 2: Write Two Searches Over That Batch - a Linear Scan and a Dict Lookup - and Confirm They Agree =====
