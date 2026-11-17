@@ -97,7 +97,7 @@ print(fleet[:2])
 
 class Station:
     def __init__(self, name, capacity, bikes_available, station_id, needs_maintenance):
-        self.name = name-
+        self.name = name
         self.capacity = int(capacity)
         self.bikes_available = int(bikes_available)
         self.station_id = station_id
