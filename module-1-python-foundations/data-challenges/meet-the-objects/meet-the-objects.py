@@ -70,11 +70,12 @@ quiet = fleet[-1]
 print(busy.needs_restock(), quiet.needs_restock())
 
 busy.bikes_available = 0
+print(busy.needs_restock(), quiet.needs_restock())
 
 
 
 # Step 2, answer 1:
-# [self.name ("station names"), self.station_id ("bikes identification numbers"), self.capacity ("station capacity to hold bikes"), self.bike_available ("bikes available in each station"), self.needs_maintenance("stations that need help")]
+# [self.name ("station names"), self.station_id ("station identification numbers"), self.capacity ("station capacity to hold bikes"), self.bikes_available ("bikes available in each station"), self.needs_maintenance("stations that need help")]
 # Step 2, answer 2:
 # "station_id" and "name" did not match the original data file. We decided to change it.
 # Step 2, answer 3:
