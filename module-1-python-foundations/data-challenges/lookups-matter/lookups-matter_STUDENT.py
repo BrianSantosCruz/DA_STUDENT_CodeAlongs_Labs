@@ -56,8 +56,8 @@ for member_id in swipes:
         linear_total += count
 
 
-#print("swipes:", len(swipes), "| not members:", not_members)
-#print("linear total comparisons:", linear_total)
+print("swipes:", len(swipes), "| not members:", not_members)
+print("linear total comparisons:", linear_total)
 
 # Step 2, answer 1:
 #
@@ -72,26 +72,26 @@ for member_id in swipes:
 # TODO: write find_dict(members_by_id, member_id)
 # TODO: make find_dict() return members_by_id.get(member_id), 1
 
-members_by_id = {}
-build_steps = 0
-for row in members:
-    row["member_id"]
-    build_steps += 1
+#members_by_id = {}
+#build_steps = 0
+#for row in members:
+#    row["member_id"]
+#    build_steps += 1
 
-print("build cost:", build_steps, "| keys in the dict:", len(members_by_id))
+#print("build cost:", build_steps, "| keys in the dict:", len(members_by_id))
 
 # TODO: assign `linear_running` to 0 and `dict_running` to build_steps
 # TODO: assign `pays_off_at` to None and `swipe_number` to 0
-for member_id in swipes:
+#for member_id in swipes:
     # TODO: add 1 to `swipe_number`
-    _, linear_count = find_linear(members, member_id)
-    _, dict_count = find_dict(members_by_id, member_id)
+#    _, linear_count = find_linear(members, member_id)
+#    _, dict_count = find_dict(members_by_id, member_id)
     # TODO: add each search's count to its running total
     # TODO: print swipe_number, the ID and both running totals
     # TODO: the first time dict_running < linear_running, set `pays_off_at`
 
-print("dict pays off at swipe:", pays_off_at)
-print("morning totals | linear:", linear_running, "| dict:", dict_running)
+#print("dict pays off at swipe:", pays_off_at)
+#print("morning totals | linear:", linear_running, "| dict:", dict_running)
 
 # Step 3, answer 1:
 #
