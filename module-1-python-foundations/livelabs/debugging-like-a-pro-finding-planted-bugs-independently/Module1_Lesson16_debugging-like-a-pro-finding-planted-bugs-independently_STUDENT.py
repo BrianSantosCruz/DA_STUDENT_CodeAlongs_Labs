@@ -45,8 +45,8 @@ print('----- 2. The Script, Part 2: The Data -----')
 games = [
     BoardGame("Catan", 3, "Strategy"),
     BoardGame("Uno", 0, "Card"),
-    BoardGame("Chess", 2, "strategy"),
-    BoardGame("Sorry!", 4, "Strategy"),
+    BoardGame("Chess", 2, "Strategy"),
+    BoardGame("Sorry!", 4, "Strategy")
 ]
 
 
