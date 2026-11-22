@@ -31,6 +31,8 @@ SUBMIT
 # ===== Step 1: Generate Batches of Your Own Day 15 Class at Three Sizes (10, 1,000, and 100,000) =====
 # Use your own class from Day 15's lab - your batch should be full of YOUR
 # objects, not a shared template's.
+import random
+
 class LibraryTool:
     def __init__(self, tool_name, quantity_available, requires_inspection):
         self.tool_name = tool_name
@@ -39,6 +41,18 @@ class LibraryTool:
 
     def is_available(self):
         return self.quantity_available > 0
+
+def make_batch(size):
+    batch = []
+    for i in range(size):
+        batch.append(LibraryTool(f"Tool{i}",random.randint(0,5), random.choice([True, False])))
+    return batch
+
+small_batch = make_batch(10)
+medium_batch = make_batch(1000)
+large_batch = make_batch(100000)
+print(len(small_batch), len(medium_batch), len(large_batch))
+
 # TODO: Generate Batches of Your Own Day 15 Class at Three Sizes (10, 1,000, and 100,000)
 
 # ===== Step 2: Write Two Searches Over That Batch - a Linear Scan and a Dict Lookup - and Confirm They Agree =====
@@ -47,17 +61,45 @@ class LibraryTool:
 
 # TODO: Write Two Searches Over That Batch - a Linear Scan and a Dict Lookup - and Confirm They Agree
 
+def find_by_name_linear(batch, name):
+    for x in batch:
+        if x.tool_name == name:
+            return x
+    return None
+
+def build_lookup(batch):
+    return{x.tool_name: x for x in batch}
+
+lookup = build_lookup(large_batch)
+print(find_by_name_linear(large_batch, "Tool9999").tool_name)
+print(lookup.get("Tool9999").tool_name)
+
 # ===== Step 3: Put a Stopwatch on Both Searches at All Three Sizes and Record the Numbers =====
 # Predict the pattern before running: which column should grow as size
 # grows, and which should stay roughly flat?
+
+import time
+
+pairs = [(len(small_batch), small_batch),
+         (len(medium_batch), medium_batch),
+         (len(large_batch), large_batch)]
+for size, batch in pairs:
+    lookup = build_lookup(batch)
+    start = time.perf_counter()
+    find_by_name_linear(batch, "NotThere")
+    linear_time = time.perf_counter() - start
+    start = time.perf_counter()
+    lookup.get("Not There")
+    dict_time = time.perf_counter() - start
+    print(size, linear_time, dict_time)
 
 # TODO: Put a Stopwatch on Both Searches at All Three Sizes and Record the Numbers
 
 # ===== Step 4: Answer Your Manager's Question in One Sentence, in Big-O Terms =====
 
 # Your answer:
-#
-#
+# As the batch size grew from 10 to 100000, the linear scan of O(n) slowed down from 0.000011s to 0.00163s. The dictionary lookup stayed flat
+# in O(1) (constant time) at roughly 0.000002s across every size.
 
 # ===== Step 5: Optional Stretch: Ask an AI How to Speed Up Your Linear Scan, Then Make It Prove It =====
 # Stretch work only - beyond the core lab budget. Take it if you finish
