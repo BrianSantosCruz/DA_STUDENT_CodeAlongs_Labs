@@ -116,8 +116,8 @@ for emp in employee_ids:
 # TODO: fix weekly_pay() so it follows the handbook rule word for word
 # TODO: fix the other line that compares `total` against 40 the same way
 def weekly_pay(hours, rate):
-    if hours >= 40:
-        return hours * rate * 1.5
+    if hours > 40:
+        return (40 * rate) + ((hours - 40) * rate * 1.5)
     return hours * rate
 
 
@@ -132,7 +132,7 @@ for emp in employee_ids:
             name = r["name"]
             rate = r["rate"]
             total = total + r["hours"]
-    if total >= 40:
+    if total > 40:
         owed_overtime = owed_overtime + 1
     pay = weekly_pay(total, rate)
     payroll = payroll + pay
@@ -142,8 +142,12 @@ print("employees owed overtime:", owed_overtime)
 print(f"TOTAL PAYROLL: ${payroll:,.2f}")
 
 # Step 4, answer 1:
-#
+# # Rosa Alvarez (40 hrs @ $24.00/hr): 40 * 24.00 = $960.00 (no overtime).
+# Darnell Pierce (46 hrs @ $31.50/hr): (40 * 31.50) + (6 * 31.50 * 1.5) = $1,260.00 + $283.50 = $1,543.50.
+# Mei Tanaka (32 hrs @ $28.00/hr): 32 * 28.00 = $896.00 (no overtime).
 # Step 4, answer 2:
-#
+# Bug 1: I changed return hours * rate * 1.5 inside weekly_pay to
+# return (40 * rate) + ((hours - 40) * rate * 1.5) so only hours above 40 are paid at 1.5x.
+# Bug 2: I changed both >= in if hours >= 40 and if total >= 40 to only have >.
 # Step 4, answer 3:
-#
+# Rosa's 40 week can only catch one of the bugs because she is the only one to have 40 hours, triggering >= 40 as overtime.
