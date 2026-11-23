@@ -33,11 +33,13 @@ def weekly_hours(lines, emp_id):
 print("Rosa Alvarez, weekly hours:", weekly_hours(lines, "E101"))
 
 # Step 1, answer 1:
-#
+# Rosa worked 8 hours per day from Monday to Friday - 8 + 8 + 8 + 8 + 8 = 40.
 # Step 1, answer 2:
-#
+# - The last line tells you what type of error occurs and why it happened.
+# - Each block above it shows the file, line number, and function that caused the error. I found that out by reading the traceback
+# piece by piece, and comparing it to the incorrect code (Day 10 traceback notes).
 # Step 1, answer 3:
-#
+# The traceback ended in add_hours but specifically was in weekly_hours (line 29).
 
 
 # Step 2: Trace the ZeroDivisionError Back to the Hand-Typed Staff List
@@ -53,8 +55,12 @@ def days_worked(lines, emp_id):
             days = days + 1
     return days
 
+staff = []
+for row in lines[1:]:
+    emp_id = row.split(",")[0]
+    if emp_id not in staff:
+        staff.append(emp_id)
 
-staff = ["E101", "E102", "E103", "E106", "E105"]
 for emp_id in staff:
     hours = weekly_hours(lines, emp_id)
     days = days_worked(lines, emp_id)
@@ -62,11 +68,11 @@ for emp_id in staff:
           "| average per day:", hours / days)
 
 # Step 2, answer 1:
-#
+# There are 5 employees in the CSV file.
 # Step 2, answer 2:
-#
+# 3 lines printed before the crash, and it stopped on E106.
 # Step 2, answer 3:
-#
+# The bug lived above the division line in the staff list because it includes E106, which is not in the CSV.
 
 
 # ===== Day 2 =====
