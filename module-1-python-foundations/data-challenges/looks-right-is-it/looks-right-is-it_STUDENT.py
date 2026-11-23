@@ -17,7 +17,6 @@ with open(DATA_FILE) as f:
 # TODO: wrap that value in int() so add_hours() adds a number
 # TODO: delete the print(repr(hours)) line once Rosa's total is right
 def add_hours(total, hours):
-    # print(repr(hours))
     return total + hours
 
 
@@ -93,8 +92,9 @@ for r in records:
     if r["id"] not in employee_ids:
         employee_ids.append(r["id"])
 
-total = 0
+
 for emp in employee_ids:
+    total = 0
     name = ""
     for r in records:
         if r["id"] == emp:
@@ -103,11 +103,12 @@ for emp in employee_ids:
     print(emp, name, "| weekly hours:", total)
 
 # Step 3, answer 1:
-#
+# Rosa had 40 hours (8 + 8 + 8 + 8 + 8). Mei had 32 hours (6 + 7 + 8 + 6 + 5).
 # Step 3, answer 2:
-#
+# Before each employee's count, total held the sum of all previous employees.
+# This is because total = 0 was placed outside the for emp in employee_ids loop.
 # Step 3, answer 3:
-#
+# Rosa's is right because she is first in the loop when total starts from 0, whilst Priya is last, getting added on from everyone's hours before her.
 
 
 # Step 4: Fix Two Overtime Bugs That Overpay the Firm by $1,810 a Week
